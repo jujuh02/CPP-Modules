@@ -1,0 +1,34 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/03 08:34:24 by juhaamid          #+#    #+#              #
+#    Updated: 2023/11/03 08:35:15 by juhaamid         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = phonebook
+
+SRCS = phonebook.cpp
+
+OBJS = phonebook.o
+
+CC = c++
+
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+all = $(NAME)
+
+$(NAME): ${OBJS}
+		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+clean:
+		rm -f ${OBJS}
+
+fclean: clean
+		rm -f ${NAME}
+
+re: fclean all
