@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 08:35:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/07 12:58:22 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:56:14 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@ Phonebook::~Phonebook()
 {
 }
 
+void	Phonebook::add()
+{
+	std::getline(std::cin, )
+}
+
 void	Phonebook::start()
 {
 	std::cout << std::endl;
-	
+
 	std::cout << MAGENTA << "📞 WELCOME TO YOUR PHONEBOOK 📞" << std::endl;
 	std::cout << std::endl;
 	std::cout << "------------OPTIONS------------"<< std::endl;
@@ -32,7 +37,7 @@ void	Phonebook::start()
 	std::cout << " 3. EXIT    " << std::endl;
 	
 	std::cout << std::endl;
-	
+
 
 }
 
@@ -49,7 +54,7 @@ int main()
 		std::cin >> input;
 		if (input == "ADD")
 		{
-			pb.add();
+			// pb.add();
 			std::cout << "hi" << std::endl;
 		}
 		else if (input == "EXIT")
