@@ -6,15 +6,15 @@
 #    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/03 08:34:24 by juhaamid          #+#    #+#              #
-#    Updated: 2023/11/03 08:35:15 by juhaamid         ###   ########.fr        #
+#    Updated: 2023/11/07 09:06:25 by juhaamid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS = phonebook.cpp
+SRCS = phonebook.cpp contact.cpp
 
-OBJS = phonebook.o
+OBJS = phonebook.o contact.o
 
 CC = c++
 

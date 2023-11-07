@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 09:07:21 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/07 12:59:35 by juhaamid         ###   ########.fr       */
+/*   Created: 2023/11/06 08:34:35 by juhaamid          #+#    #+#             */
+/*   Updated: 2023/11/07 08:47:01 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ************************************************************************** */
-
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#ifndef CONTACT_CLASS_H
+# define CONTACT_CLASS_H
 
 #include <string>
-#include <stdlib.h>
 #include <iostream>
-#include "contact.class.hpp"
 
-#define MAGENTA "\033[35m" 
-
-class Phonebook
+class	Contact
 {
 private:
-	Contact	_contacts[8];
-	
-public:
-	Phonebook();
-	~Phonebook();
+	std::string first_name;
+	std::string last_name;
+	std::string nickname;
+	std::string phone_number;
+	std::string darkest_secret;
+	int		idx;
 
-	void start();
-	void add();
+public:
+	Contact();
+	~Contact();
 };
 
 #endif
