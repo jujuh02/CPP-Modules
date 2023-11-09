@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:07:21 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/07 12:59:35 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/09 10:45:40 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 #ifndef PHONEBOOK_CLASS_H
 # define PHONEBOOK_CLASS_H
 
-#include <string>
+#include <string.h>
 #include <stdlib.h>
 #include <iostream>
+#include <iomanip>
 #include "contact.class.hpp"
 
 #define MAGENTA "\033[35m" 
@@ -26,6 +27,7 @@ class Phonebook
 {
 private:
 	Contact	_contacts[8];
+	int		num;
 	
 public:
 	Phonebook();
@@ -33,6 +35,8 @@ public:
 
 	void start();
 	void add();
+	void search();
+	void display();
 };
 
 #endif
