@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 08:34:35 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/08 11:48:01 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/10 09:23:19 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ public:
 	void set_nickname(std::string str);
 	void set_phone_number(std::string str);
 	void set_darkest_secret(std::string str);
-
 };
 
 #endif

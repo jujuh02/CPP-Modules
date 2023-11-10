@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 08:35:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/10 08:16:00 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/10 09:46:40 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Phonebook::~Phonebook()
 {
 	std::cout << "phonebook close" << std::endl ;
 }
+int Phonebook::num = 0;
 
 void	Phonebook::display()
 {
@@ -49,7 +50,6 @@ void	Phonebook::add()
 {
 	std::string ans;
 	ans = "";
-	
 	if (this->num > 8)
 	{
 		std::cout << "Sorryy you can't have more friends";
