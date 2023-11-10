@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:07:21 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/09 10:45:40 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/10 08:20:52 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Phonebook
 {
 private:
 	Contact	_contacts[8];
-	int		num;
+	static int		num;
 	
 public:
 	Phonebook();

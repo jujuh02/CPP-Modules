@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 08:35:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/09 14:47:32 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/10 08:16:00 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	Phonebook::add()
 		if (std::getline(std::cin >> std::ws, ans) && ans != "")
 			this->_contacts[this->num % 8].set_darkest_secret(ans);
 	}
-	this->;
+	this->num++;
 }
 
 void	Phonebook::start()
