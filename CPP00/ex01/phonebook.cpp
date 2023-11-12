@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 08:35:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/10 09:46:40 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:39:33 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Phonebook::Phonebook()
 
 Phonebook::~Phonebook()
 {
-	std::cout << "phonebook close" << std::endl ;
+	std::cout << "phonebook closed" << std::endl ;
 }
 int Phonebook::num = 0;
 
@@ -38,12 +38,38 @@ void	Phonebook::display()
 	std::cout << "+" << std::string(43, '-') << "+" <<std::endl;
 }
 
+void	Phonebook::print(Contact info)
+{
+	std::cout << std::endl;
+	std::cout << "SEARCHING................." << std::endl;
+	std::cout << std::endl;
+	std::cout << "First Name: " << info.get_first_name() << std::endl;
+	std::cout << "Last Name: " << info.get_last_name() << std::endl;
+	std::cout<< "Nickname: " << info.get_nickname() << std::endl;
+	std::cout << "Phone Number: " << info.get_phone_number() << std::endl;
+	std::cout << "Dark Secret: " << info.get_darkest_secret() << std::endl;
+	std::cout << std::endl;
+	this->start();
+}
+
 void	Phonebook::search()
 {
+	std::string str;
 	this->display();
-	std::cout << "-----------------Pick an Index---------------" << std::endl;
-	
-	
+	std::cout << "-----------------Enter an Index---------------" << std::endl;
+	while (!std::cin.eof())
+	{
+		if (std::getline(std::cin, str) && str != "")
+		{
+			if (str.size() == 1 && str[0] >= '1' && str[0] <= '8' && \
+					this->_contacts[str[0] - 1 - '0'].get_first_name().size())
+				break ;
+		}
+		if (str != "")
+			std::cout << "Invalid index!" << std::endl;
+		}
+		if (!std::cin.eof())
+		this->print(this->_contacts[str[0] - 1 - '0']);
 }
 
 void	Phonebook::add()
@@ -52,8 +78,8 @@ void	Phonebook::add()
 	ans = "";
 	if (this->num > 8)
 	{
-		std::cout << "Sorryy you can't have more friends";
-		
+		std::cout << "replacing first added contact" << std::endl;
+        num = 0;	
 	}
 	while (!std::cin.eof() && ans == "")
 	{
@@ -116,6 +142,7 @@ int main()
 	check = true;
 	
 	pb.start();
+	
 	while (check)
 	{
 		std::cin >> input;
@@ -129,7 +156,7 @@ int main()
 			pb.search();
 		else if (input == "EXIT")
 		{
-			std::cout << "bye" << std::flush;
+			std::cout << "bye" << std::flush <<std::endl;
 			check = false;
 			return (0);
 		}
