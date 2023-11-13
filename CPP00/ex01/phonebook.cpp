@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 08:35:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/13 09:09:22 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:36:37 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,9 @@ void	Phonebook::start()
 	
 	std::cout << std::endl;
 }
-
+// fix add input for emtpy value
+// try using smth else besides substr because of the allocation
+// implement go back button
 int main()
 {
 	Phonebook	pb;
