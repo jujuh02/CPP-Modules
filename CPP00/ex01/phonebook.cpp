@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 08:35:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/12 15:39:33 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/13 09:09:22 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ Phonebook::~Phonebook()
 }
 int Phonebook::num = 0;
 
+std::string Phonebook::fixlen(std::string str)
+{
+	if (str.size() > 10)
+		return str.substr(0, 9) + ".";
+    return str;
+}
+
 void	Phonebook::display()
 {
 	std::cout << std::endl;
@@ -31,9 +38,9 @@ void	Phonebook::display()
 		<< "|" << std::setw(10) << "Nickname" << std::right << "|"<< std::endl;
 	for (int i = 0; i < 8; i++)
 	{
-		std::cout<< "|" << std::right << std::setw(10) << i + 1 << "|" << std::right << std::setw(10) << this->_contacts[i].get_first_name() << "|";
-		std::cout << std::right <<  std::setw(10) << this->_contacts[i].get_last_name();
-		std::cout<< "|" << std::setw(10) << this->_contacts[i].get_nickname() << "|" << std::endl;
+		std::cout<< "|" << std::right << std::setw(10) << i + 1 << "|" << std::right << std::setw(10) << fixlen(this->_contacts[i].get_first_name());
+		std::cout << "|" << std::right <<  std::setw(10) << fixlen(this->_contacts[i].get_last_name());
+		std::cout<< "|" << std::setw(10) << fixlen(this->_contacts[i].get_nickname()) << "|" << std::endl;
 	}
 	std::cout << "+" << std::string(43, '-') << "+" <<std::endl;
 }
@@ -49,7 +56,6 @@ void	Phonebook::print(Contact info)
 	std::cout << "Phone Number: " << info.get_phone_number() << std::endl;
 	std::cout << "Dark Secret: " << info.get_darkest_secret() << std::endl;
 	std::cout << std::endl;
-	this->start();
 }
 
 void	Phonebook::search()

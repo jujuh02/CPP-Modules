@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:07:21 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/12 15:05:33 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/13 09:08:17 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ public:
 	void search();
 	void display();
 	void print(Contact info);
+	std::string fixlen(std::string str);
 };
 
 #endif
