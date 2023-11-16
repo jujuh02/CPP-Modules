@@ -18,9 +18,10 @@ class Twinkle
 
 public:
 	float const a;
-	float b;
-	Twinkle(char p1, int p2, float p3);
+	int b;
+	Twinkle( float const p);
 	~Twinkle();
+	void	bar(void)const;  
 };
 
 

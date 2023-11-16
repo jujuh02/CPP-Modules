@@ -3,6 +3,7 @@
 
 int main()
 {
-	Twinkle tryy('a', 4, 23.5f);
+	Twinkle tryy(21.1f);
+	tryy.bar();
 	return (0);
 }
