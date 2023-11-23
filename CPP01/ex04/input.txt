@@ -1,0 +1,1 @@
+This is a test file. It contains s1 multiple times. s1 is to be replaced with s2.
