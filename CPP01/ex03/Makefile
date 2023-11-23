@@ -6,13 +6,13 @@
 #    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 09:32:50 by juhaamid          #+#    #+#              #
-#    Updated: 2023/11/18 16:36:42 by juhaamid         ###   ########.fr        #
+#    Updated: 2023/11/21 11:45:17 by juhaamid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = battlefield
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS = main.cpp Weapon.cpp HumanB.cpp HumanA.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

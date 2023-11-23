@@ -5,21 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 15:19:21 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/18 16:37:33 by juhaamid         ###   ########.fr       */
+/*   Created: 2023/11/20 10:24:01 by juhaamid          #+#    #+#             */
+/*   Updated: 2023/11/20 10:25:25 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int main()
 {
-	Zombie *num1 = newZombie("Ace");
-	Zombie *num2 = newZombie("Zoro");
-	randomChump("Chopper");
-	randomChump("Apple");
-	num1->announce();
-	num2->announce();
-	delete(num1);
-	delete(num2);
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str;
+	std::string &stringREF = str;
+	std::cout << "str: " << &str << std::endl;
+	std::cout << "strPtr: " << stringPTR << std::endl;
+	std::cout << "strRef: " << &stringREF << std::endl;
+	std::cout << "val str: " << str << std::endl;
+	std::cout << "val strPtr: " << *stringPTR << std::endl;
+	std::cout << "val strRef: "  << stringREF << std::endl;
+	
+	return (0);
 }

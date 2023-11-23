@@ -6,7 +6,7 @@
 #    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/03 08:34:24 by juhaamid          #+#    #+#              #
-#    Updated: 2023/11/12 14:41:31 by juhaamid         ###   ########.fr        #
+#    Updated: 2023/11/21 08:04:09 by juhaamid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ SRCS = phonebook.cpp contact.cpp
 
 OBJS = phonebook.o contact.o
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 all = ${NAME}
 
 $(NAME): ${OBJS}
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 		rm -f ${OBJS}

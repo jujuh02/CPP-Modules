@@ -6,13 +6,13 @@
 #    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 09:32:50 by juhaamid          #+#    #+#              #
-#    Updated: 2023/11/18 16:36:42 by juhaamid         ###   ########.fr        #
+#    Updated: 2023/11/20 10:24:44 by juhaamid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = ptrref
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS = main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

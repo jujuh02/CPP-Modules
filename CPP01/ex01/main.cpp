@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 15:51:06 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/18 16:34:33 by juhaamid         ###   ########.fr       */
+/*   Created: 2023/11/13 15:19:21 by juhaamid          #+#    #+#             */
+/*   Updated: 2023/11/20 08:59:55 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void randomChump( std::string name )
+int main()
 {
-	Zombie zombie(name);
-	zombie.announce();
+	Zombie *zoms = zombieHorde(5, "pizza");
+	if (!zoms)
+		return 0;
+	for (int i = 0; i < 5; i++)
+	{
+		zoms[i].announce();
+	}
+	delete[] zoms;
 }
