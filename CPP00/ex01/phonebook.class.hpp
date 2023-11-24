@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 09:07:21 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/13 09:08:17 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/24 09:09:26 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@
 
 #define MAGENTA "\033[35m" 
 
-class Phonebook
+class PhoneBook
 {
 private:
 	Contact	_contacts[8];
 	int static	num;
 	
 public:
-	Phonebook();
-	~Phonebook();
+	PhoneBook();
+	~PhoneBook();
 
 	void start();
 	void add();

@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 08:35:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/21 08:15:45 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:45:36 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.class.hpp"
+#include "PhoneBook.class.hpp"
 
-Phonebook::Phonebook()
+PhoneBook::PhoneBook()
 {
-	std::cout << "phonebook opened" << std::endl ;
+	std::cout << "phoneBook opened" << std::endl ;
 }
 
-Phonebook::~Phonebook()
+PhoneBook::~PhoneBook()
 {
-	std::cout << "phonebook closed" << std::endl ;
+	std::cout << "phoneBook closed" << std::endl ;
 }
-int Phonebook::num = 0;
+int PhoneBook::num = 0;
 
-std::string Phonebook::fixlen(std::string str)
+std::string PhoneBook::fixlen(std::string str)
 {
-	if (str.size() > 10)
-		return str.substr(0, 9) + ".";
+	if (str.size() >= 10){
+		str.resize(9);
+		str.append(".");
+	}
     return str;
 }
 
-void	Phonebook::display()
+void	PhoneBook::display()
 {
 	std::cout << std::endl;
 	std::cout << "+" << std::string(43, '-') << "+" <<std::endl;
@@ -45,8 +47,10 @@ void	Phonebook::display()
 	std::cout << "+" << std::string(43, '-') << "+" <<std::endl;
 }
 
-void	Phonebook::print(Contact info)
+void	PhoneBook::print(Contact info)
 {
+	std::string op;
+	op = "";
 	std::cout << std::endl;
 	std::cout << "SEARCHING................." << std::endl;
 	std::cout << std::endl;
@@ -56,29 +60,57 @@ void	Phonebook::print(Contact info)
 	std::cout << "Phone Number: " << info.get_phone_number() << std::endl;
 	std::cout << "Dark Secret: " << info.get_darkest_secret() << std::endl;
 	std::cout << std::endl;
+	std::cout << "If you want to go back to the main menu press 0 or press 1 if you want to go back to the search menu" << std::endl;
+	while (!std::cin.eof())
+	{
+		if (std::getline(std::cin, op) && (op != "" || op != "\n")){
+			if (op == "0"){
+				this->start();
+				return ;
+			}
+			if (op == "1"){
+				this->search();
+				return ;
+			}
+			else if (op != "0" || op != "1" || op.length() == 0)
+				std::cout << "Press" << std::endl;
+				std::cout << "[0] to Main Menu" << std::endl;
+				std::cout << "[1] to search again" << std::endl;
+				
+		}
+		
+	}
 }
 
-void	Phonebook::search()
+void	PhoneBook::search()
 {
 	std::string str;
 	this->display();
-	std::cout << "-----------------Enter an Index---------------" << std::endl;
+	std::cout << "-----------------Enter an Index or 0 to go back---------------" << std::endl;
 	while (!std::cin.eof())
 	{
-		if (std::getline(std::cin, str) && str != "")
+		if ((std::getline(std::cin, str) && str != "") || str.length() == 0)
 		{
 			if (str.size() == 1 && str[0] >= '1' && str[0] <= '8' && \
 					this->_contacts[str[0] - 1 - '0'].get_first_name().size())
 				break ;
+			if (str.size() == 1 && str[0] == '0'){
+				this->start();
+				return ;
+			}
+			else if (str.length() == 0)
+				std::cout << "Cannot be left empty!" << std::endl;
 		}
-		if (str != "")
-			std::cout << "Invalid index!" << std::endl;
+		if (str != "" && str.length() != 0)
+			std::cout << "Enter Correct Index!" << std::endl;
+	}
+		if (!std::cin.eof()){
+			this->print(this->_contacts[str[0] - 1 - '0']);
+			
 		}
-		if (!std::cin.eof())
-		this->print(this->_contacts[str[0] - 1 - '0']);
 }
 
-void	Phonebook::add()
+void	PhoneBook::add()
 {
 	std::string ans;
 	ans = "";
@@ -126,7 +158,7 @@ void	Phonebook::add()
 	this->num++;
 }
 
-void	Phonebook::start()
+void	PhoneBook::start()
 {
 	std::cout << std::endl;
 
@@ -139,12 +171,10 @@ void	Phonebook::start()
 	
 	std::cout << std::endl;
 }
-// fix add input for emtpy value
-// try using smth else besides substr because of the allocation
-// implement go back button
+
 int main()
 {
-	Phonebook	pb;
+	PhoneBook	pb;
 	std::string	input;
 	bool	check;
 	check = true;
@@ -168,5 +198,7 @@ int main()
 			check = false;
 			return (0);
 		}
+		else if (input != "ADD" || input != "SEARCH"|| input != "EXIT")
+			std::cout << "pls enter one of the available options" << std::endl;
 	}
 }

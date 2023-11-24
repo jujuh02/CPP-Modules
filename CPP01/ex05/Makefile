@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/03 08:34:24 by juhaamid          #+#    #+#              #
-#    Updated: 2023/11/24 09:11:06 by juhaamid         ###   ########.fr        #
+#    Created: 2023/11/13 09:32:50 by juhaamid          #+#    #+#              #
+#    Updated: 2023/11/23 09:29:57 by juhaamid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = replace
 
-SRCS = PhoneBook.cpp contact.cpp
+SRCS = main.cpp
 
-OBJS = PhoneBook.o contact.o
+OBJS = ${SRCS:.cpp=.o}
 
 CXX = c++
 

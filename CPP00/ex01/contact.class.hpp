@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 08:34:35 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/10 09:23:19 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/24 08:17:17 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ private:
 	std::string nickname;
 	std::string phone_number;
 	std::string darkest_secret;
-	int		idx;
-
-	
 
 public:
 	Contact();
