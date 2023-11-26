@@ -6,11 +6,11 @@
 #    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 09:32:50 by juhaamid          #+#    #+#              #
-#    Updated: 2023/11/24 20:07:14 by juhaamid         ###   ########.fr        #
+#    Updated: 2023/11/26 12:36:47 by juhaamid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harl
+NAME = harlFilter
 
 SRCS = main.cpp Harl.cpp
 
