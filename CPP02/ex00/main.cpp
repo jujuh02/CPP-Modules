@@ -5,21 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 20:02:29 by juhaamid         gt #+#    #+#             */
-/*   Updated: 2023/11/24 20:23:02 by juhaamid         ###   ########.fr       */
+/*   Created: 2023/11/26 18:48:12 by juhaamid          #+#    #+#             */
+/*   Updated: 2023/11/26 19:02:49 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int main()
-{
-	Harl apple;
-	apple.complain("DEBUG");
-	apple.complain("INFO");
-	apple.complain("WARNING");
-	apple.complain("ERROR");
-	apple.complain("try");
-	apple.complain("DebUg");
-
+int main( void ) {
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
 }

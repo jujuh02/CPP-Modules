@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/03 08:34:24 by juhaamid          #+#    #+#              #
-#    Updated: 2023/11/26 18:18:54 by juhaamid         ###   ########.fr        #
+#    Created: 2023/11/13 09:32:50 by juhaamid          #+#    #+#              #
+#    Updated: 2023/11/26 19:01:54 by juhaamid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = Fixed
 
-SRCS = PhoneBook.cpp Contact.cpp
+SRCS = main.cpp Fixed.cpp
 
-OBJS = PhoneBook.o Contact.o
+OBJS = ${SRCS:.cpp=.o}
 
 CXX = c++
 

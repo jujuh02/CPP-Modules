@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 20:02:29 by juhaamid         gt #+#    #+#             */
-/*   Updated: 2023/11/24 20:23:02 by juhaamid         ###   ########.fr       */
+/*   Created: 2023/11/26 18:05:47 by juhaamid          #+#    #+#             */
+/*   Updated: 2023/11/26 18:48:24 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef FIXED_H
+# define FIXED_H
 
-int main()
+#include <iostream>
+#include <string.h>
+
+class Fixed
 {
-	Harl apple;
-	apple.complain("DEBUG");
-	apple.complain("INFO");
-	apple.complain("WARNING");
-	apple.complain("ERROR");
-	apple.complain("try");
-	apple.complain("DebUg");
+private:
+		int val;
+		static const int bit = 8;
+public:
+		Fixed();
+		~Fixed();
+		Fixed(const Fixed &b);
+		Fixed &operator = (const Fixed &b);
+		int getRawBits(void) const;
+		int setRawBits(int const bitt);
+};
 
-}
+#endif
