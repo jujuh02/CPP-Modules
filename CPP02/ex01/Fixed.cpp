@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:05:33 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/28 16:35:21 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/28 19:36:07 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Fixed::Fixed() : val(0){
 
 Fixed::Fixed(const int n){
 	std::cout << "Int constructor called" << std::endl;
+	this->setRawBits(n << this->bit);ndl;
 	this->setRawBits(n << this->bit);
 }
 
@@ -30,6 +31,10 @@ Fixed::Fixed(const Fixed &b) : val(b.getRawBits()){
 	std::cout << "Copy constructor called" << std::endl;
 }
 
+Fixed::~Fixed(){
+	std::cout << "Destructer called" << std::endl;
+}
+
 Fixed &Fixed::operator = (const Fixed &b){
 	std::cout << "Copy assignment constructor called" << std::endl;
 	if (this != &b){
@@ -38,9 +43,6 @@ Fixed &Fixed::operator = (const Fixed &b){
 	return (*this);
 }
 
-Fixed::~Fixed(){
-	std::cout << "Destructer called" << std::endl;
-}
 int Fixed::getRawBits(void)const{
 	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->val);

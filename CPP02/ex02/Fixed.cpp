@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:05:33 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/28 16:34:45 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/28 20:05:40 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ Fixed::Fixed(const float fl){
 Fixed::Fixed(const Fixed &b) : val(b.getRawBits()){
 }
 
+Fixed::~Fixed(){
+}
+
 Fixed &Fixed::operator = (const Fixed &b){
 	if (this != &b){
 		this->val = b.getRawBits();
@@ -33,8 +36,6 @@ Fixed &Fixed::operator = (const Fixed &b){
 	return (*this);
 }
 
-Fixed::~Fixed(){
-}
 int Fixed::getRawBits(void)const{
 	return (this->val);
 }
@@ -116,6 +117,36 @@ float Fixed::operator-- (int){
 	return (temp);
 }
 
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a.val > b.val)
+		return a;
+	else
+		return b;
+}
+
+Fixed const &Fixed::max(Fixed const &a, Fixed const &b){
+	if (a.val > b.val)
+		return a;
+	else
+		return (b);
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b){
+	if (a.val < b.val)
+		return a;
+	else
+		return b;
+}
+
+
+Fixed const &Fixed::min(Fixed const &a, Fixed const &b)
+{
+	if (a.val < b.val)
+		return a;
+	else
+		return b;
+}
 
 
 std::ostream &operator << (std::ostream &object, const Fixed &fix){

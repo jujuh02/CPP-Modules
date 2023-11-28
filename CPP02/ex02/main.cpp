@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:48:12 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/28 16:35:58 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/28 20:06:47 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main( void ) {
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 	return (0);
 }
 

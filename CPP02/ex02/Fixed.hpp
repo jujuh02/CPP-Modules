@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:05:47 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/28 16:35:02 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/28 20:00:16 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ public:
 		float operator++ (int);
 		float operator-- ();
 		float operator-- (int);
+		static Fixed &	min(Fixed &a, Fixed &b);
+		static Fixed const &min(Fixed const &a, Fixed const &b);
+		static Fixed &max(Fixed&a, Fixed &b);
+		static Fixed const &max(Fixed const &, Fixed const &b);
 };
 std::ostream &operator << (std::ostream &object, const Fixed &fix);
 
