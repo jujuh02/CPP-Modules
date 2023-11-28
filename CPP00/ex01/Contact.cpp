@@ -6,11 +6,11 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 09:23:03 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/07 16:52:22 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/27 08:04:35 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.class.hpp"
+#include "Contact.class.hpp"
 
 Contact::Contact()
 {

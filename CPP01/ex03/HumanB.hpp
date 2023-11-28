@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:59:28 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/21 20:01:36 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:52:46 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 		HumanB(std::string name);
 		~HumanB();
 		void attack()const;
-		void set_weapon(Weapon &weapon);
+		void setWeapon(Weapon &weapon);
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:13:13 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/21 12:07:54 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/28 09:00:06 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Weapon
 	private:
 			std::string type;
 	public:
-		std::string get_type();
-		void set_type(std::string type);	
+		std::string const &getType()const;
+		void setType(std::string type);	
 		Weapon(std::string type);
 };
 

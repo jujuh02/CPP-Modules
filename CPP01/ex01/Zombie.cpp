@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:56:11 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/20 09:10:19 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:05:10 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Zombie::~Zombie()
 {
 	std::cout << "Zombie has been destroyed" << std::endl;
 }
-void Zombie::set_name(std::string name)
+void Zombie::setName(std::string name)
 {
 	this->name = name;
 }

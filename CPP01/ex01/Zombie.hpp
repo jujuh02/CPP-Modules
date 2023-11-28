@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:46:34 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/20 09:08:57 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:05:00 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public :
 	Zombie();
 	~Zombie();
 			void announce(void) const;
-			void set_name(std::string name);
+			void setName(std::string name);
 
 };
 

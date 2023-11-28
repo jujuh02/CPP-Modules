@@ -6,11 +6,11 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 08:35:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/24 12:45:36 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/27 08:13:52 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.class.hpp"
+#include "Phonebook.class.hpp"
 
 PhoneBook::PhoneBook()
 {
@@ -131,7 +131,7 @@ void	PhoneBook::add()
 	while(!std::cin.eof() && ans == "")
 	{
 		std::cout << "What's " << this->_contacts[this->num % 8].get_first_name() << "'s Last Name?" << std::endl;
-		if (std::getline(std::cin, ans) && ans != "")
+		if (std::getline(std::cin >> std::ws, ans) && ans != "")
 			this->_contacts[this->num % 8].set_last_name(ans);
 	}
 	ans = "";
@@ -184,15 +184,15 @@ int main()
 	while (check)
 	{
 		std::cin >> input;
-		if (input == "ADD")
+		if (input == "ADD" || input == "1")
 		{
 			pb.add();
 			pb.start();
 		}	
 			
-		else if (input == "SEARCH")
+		else if (input == "SEARCH" || input == "2")
 			pb.search();
-		else if (input == "EXIT")
+		else if (input == "EXIT" || input == "3")
 		{
 			std::cout << "bye" << std::flush <<std::endl;
 			check = false;
