@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:14:18 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/26 12:35:57 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:23:01 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,24 +46,37 @@ void	Harl::error(void){
 void	Harl::complain(std::string level){
 	
 	int i = 4;
+	int idx = 0;
 	
 	std::string _list[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void(Harl::*fnction[4])()= {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
+	};
 	for(i = 0; i < 4; i++)
-		if (level == _list[i])
+		if (level == _list[i]){
+			idx = i;
 			break;
+		}
 	switch (i)
 	{
 		case 0:
-			this->debug();
+			for (int i = idx; i < 4; i++)
+				(this->*(fnction[i]))();
 			break;
 		case 1:
-			this->info();
+			for (int i = idx; i < 4; i++)
+				(this->*(fnction[i]))();
 			break;
 		case 2:
-			this->warning();
+			for (int i = idx; i < 4; i++)
+				(this->*(fnction[i]))();
 			break;
 		case 3:
-			this->error();
+			for (int i = idx; i < 4; i++)
+				(this->*(fnction[i]))();
 			break;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;

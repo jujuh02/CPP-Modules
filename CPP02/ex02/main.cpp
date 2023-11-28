@@ -5,20 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 20:02:29 by juhaamid         gt #+#    #+#             */
-/*   Updated: 2023/11/24 20:23:02 by juhaamid         ###   ########.fr       */
+/*   Created: 2023/11/26 18:48:12 by juhaamid          #+#    #+#             */
+/*   Updated: 2023/11/28 16:35:58 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int main()
-{
-	Harl apple;
-	apple.complain("DEBUG");
-	apple.complain("INFO");
-	apple.complain("WARNING");
-	apple.complain("ERROR");
-	apple.complain("try");
-	apple.complain("DebUg");
+int main( void ) {
+	Fixed a;
+	Fixed const b( Fixed(5.05f) * Fixed( 2 ) );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	return (0);
 }
+
+// convert decimal to binary
+// takes only 8 bits of precision so the binary number 
+// then convert it back and cast to float or round the nu,

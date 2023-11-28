@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:05:33 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/27 13:52:33 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:35:21 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int Fixed::getRawBits(void)const{
 	return (this->val);
 }
 
-void Fixed::setRawBits(int const bitt){
+void Fixed::setRawBits(int const raw){
 	// std::cout << "setRawBits member function called" << std::endl; 
-	this->val = bitt;
+	this->val = raw;
 }
 
 float Fixed::toFloat(void) const{
@@ -59,7 +59,7 @@ int Fixed::toInt(void) const{
 	return(roundf(this->getRawBits() >> this->bit));
 }
 
-std::ostream &operator << (std::ostream &object, const Fixed fix){
+std::ostream &operator << (std::ostream &object, const Fixed &fix){
 	object << fix.toFloat();
 	return (object);
 }

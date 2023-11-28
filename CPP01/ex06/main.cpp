@@ -6,21 +6,21 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 20:02:29 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/27 11:03:45 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:19:34 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
 	Harl apple;
-	apple.complain("DEBUG");
-	apple.complain("INFO");
-	apple.complain("WARNING");
-	apple.complain("ERROR");
-	apple.complain("try");
-	apple.complain("DebUg");
-	apple.complain("heLlO");
-
+	if (ac == 2){
+		apple.complain(av[1]);
+	}
+	else{
+		std::cout << "Enter correct amount of arguments" << std::endl;
+		return (-1);
+	}
+	return (0);
 }
