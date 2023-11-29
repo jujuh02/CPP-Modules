@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:05:33 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/29 08:54:06 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/29 09:16:11 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Fixed::Fixed() : val(0){
 
 Fixed::Fixed(const int n){
 	std::cout << "Int constructor called" << std::endl;
-	this->setRawBits(n << this->bit);
 	this->setRawBits(n << this->bit);
 }
 

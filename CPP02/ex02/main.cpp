@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:48:12 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/29 09:06:04 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/29 09:22:15 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int main(void)
 	std::cout << b << " is b" << std::endl;
 	std::cout << Fixed::max(a, b) << " the max of a and b" << std::endl;
 	std::cout << Fixed::min(a, b) << " the min of a and b" << std::endl;
-
 	return 0;
 }
 // convert decimal to binary

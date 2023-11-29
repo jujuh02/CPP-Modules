@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:05:47 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/29 07:57:59 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/29 09:14:56 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ private:
 public:
 		Fixed();
 		Fixed(const int n);
+		Fixed &operator=(const Fixed &b);
+		~Fixed();
 		Fixed (const float fl);
 		Fixed(const Fixed &b);
-		~Fixed();
-		Fixed &operator=(const Fixed &b);
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		float toFloat(void) const;
