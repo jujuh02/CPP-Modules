@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:05:47 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/27 08:25:18 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/29 07:53:46 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ class Fixed
 {
 private:
 		int val;
-		static const int bit = 8;
+		static const int bit;
 public:
 		Fixed();
-		~Fixed();
 		Fixed(const Fixed &b);
-		Fixed &operator = (const Fixed &b);
+		~Fixed();
+		Fixed &operator=(const Fixed &b);
 		int getRawBits(void) const;
-		void setRawBits(int const bitt);
+		void setRawBits(int const raw);
 };
 
 #endif

@@ -6,24 +6,28 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:05:33 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/28 20:05:40 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/29 08:31:35 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::bit = 8;
 
 Fixed::Fixed() : val(0){
 }
 
 Fixed::Fixed(const int n){
 	this->setRawBits(n << this->bit);
+	// std::cout << "INT constructer called";
 }
 
 Fixed::Fixed(const float fl){
-	this->setRawBits(fl * (1 << this->bit));
+	this->val = roundf(fl * (1 << this->bit));
 }
 
-Fixed::Fixed(const Fixed &b) : val(b.getRawBits()){
+Fixed::Fixed(const Fixed &b){
+	*this = b;
 }
 
 Fixed::~Fixed(){
@@ -45,11 +49,11 @@ void Fixed::setRawBits(int const raw){
 }
 
 float Fixed::toFloat(void) const{
-	return ((float)this->getRawBits() / (1 << this->bit));
+	return ((float)this->getRawBits() / (1 << bit));
 }
 
 int Fixed::toInt(void) const{
-	return(roundf(this->getRawBits() >> this->bit));
+	return(roundf(this->getRawBits() >> bit));
 }
 
 
@@ -77,19 +81,19 @@ bool Fixed::operator!=(const Fixed &fix){
 	return (this->toFloat() != fix.toFloat());
 }
 
-float Fixed::operator+(const Fixed &fix){
+float Fixed::operator+(Fixed fix) const{
 	return (this->toFloat() + fix.toFloat());
 }
 
-float Fixed::operator-(const Fixed &fix){
+float Fixed::operator-(Fixed fix)const{
 	return (this->toFloat() - fix.toFloat());
 }
 
-float Fixed::operator*(const Fixed &fix){
+float Fixed::operator*(Fixed fix)const{
 	return (this->toFloat() * fix.toFloat());
 }
 
-float Fixed::operator/(const Fixed &fix){
+float Fixed::operator/(Fixed fix)const{
 	return (this->toFloat() / fix.toFloat());
 }
 
@@ -153,4 +157,6 @@ std::ostream &operator << (std::ostream &object, const Fixed &fix){
 	object << fix.toFloat();
 	return (object);
 }
+
+// set raw bits is the same as basically val = whatever the input is
 // we have to make operator overloads because we wll  be using user defined classes

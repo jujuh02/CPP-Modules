@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:05:47 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/28 20:00:16 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/29 08:18:32 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
 {
 private:
 		int val;
-		static const int bit = 8;
+		static const int bit;
 public:
 		Fixed();
 		Fixed(const int n);
@@ -40,15 +40,15 @@ public:
 		bool operator<=(const Fixed &fix);
 		bool operator==(const Fixed &fix);
 		bool operator!=(const Fixed &fix);
-		float operator+(const Fixed &fix);
-		float operator-(const Fixed &fix);
-		float operator*(const Fixed &fix);
-		float operator/(const Fixed &fix);
+		float operator+(Fixed fix)const;
+		float operator-(Fixed fix)const;
+		float operator*(Fixed fix)const;
+		float operator/(Fixed fix)const;
 		float operator++ ();
 		float operator++ (int);
 		float operator-- ();
 		float operator-- (int);
-		static Fixed &	min(Fixed &a, Fixed &b);
+		static Fixed &min(Fixed &a, Fixed &b);
 		static Fixed const &min(Fixed const &a, Fixed const &b);
 		static Fixed &max(Fixed&a, Fixed &b);
 		static Fixed const &max(Fixed const &, Fixed const &b);
