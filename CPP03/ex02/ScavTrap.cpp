@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 10:23:06 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/30 15:32:52 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:18:41 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ ScavTrap::ScavTrap(const ScavTrap &a){
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other){
 	if (this != &other){
-		*this = other;
+		this->name = other.name;
+		this->hit = other.hit;
+		this->energy = other.energy;
+		this->_attack = other._attack;
 	}
 	return (*this);
 }

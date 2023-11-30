@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:15:14 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/29 16:28:20 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:27:18 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ void ClapTrap::takeDamage(unsigned int amount){
 
 void ClapTrap::beRepaired(unsigned int amount){
 
-	if (this->hit > 0 && this->energy > 0 && (this->hit + amount) <= 10){
+	if (this->hit > 0 && this->energy > 0 && (this->hit + amount) <= 100){
 		this->hit += amount;
 		this->energy--;
 		std::cout << this->name <<"'s owwie went away, now they have " <<  this->energy << "energy points & " << this->hit << " hit points "<< std::endl;
 	}
-	else if (this->hit == 10)
+	else if (this->hit == 100)
 		std::cout << this->name << " cant be healed because they are at full health" << std::endl;
 	else if (this->hit == 0)
 		std::cout << this->name << " cant be repaired..They have no hit points left" << std::endl;

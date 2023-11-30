@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:15:21 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/30 15:33:52 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:02:55 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 		std::string name;
 		unsigned int hit;
 		unsigned int energy;

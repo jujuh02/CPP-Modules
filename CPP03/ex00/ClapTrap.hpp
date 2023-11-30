@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:15:21 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/29 13:56:04 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:25:10 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ private:
 		unsigned int energy;
 		unsigned int _attack;
 public:
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &other);
 		ClapTrap &operator=(const ClapTrap &other);

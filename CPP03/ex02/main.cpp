@@ -5,28 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 13:24:09 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/30 16:26:44 by juhaamid         ###   ########.fr       */
+/*   Created: 2023/11/30 17:13:18 by juhaamid          #+#    #+#             */
+/*   Updated: 2023/11/30 17:13:56 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-int main()
+int main ()
 {
-	ClapTrap guy("Zoro");
-	ClapTrap guy2("Mihawk");
+	FragTrap guy("Zoro");
+	FragTrap guy2("Mihawk");
 	guy.attack("Enemy1");
-   guy2.takeDamage(30);
+   guy2.takeDamage(10);
    guy2.takeDamage(1);
-    // ClapTrap claptrap3 =guy2;  // Copy constructor
-    // guy = guy2;  // Copy assignment
+    // ScavTrap ScavTrap3 =guy2;  // Copy constructor
+    guy = guy2;  // Copy assignment
 
     guy.takeDamage(5);
-    guy.beRepaired(54);
-	// guy2.attack("Enemy2");
+    guy.beRepaired(2);
+	// guy.guardGate();
+	guy2.attack("Enemy2");
     // guy.beRepaired(2);
-    // claptrap3.takeDamage(4);
-    // claptrap3.beRepaired(2);
+    // ScavTrap3.takeDamage(4);
+    // ScavTrap3.beRepaired(2);
 	return (0);
 }
