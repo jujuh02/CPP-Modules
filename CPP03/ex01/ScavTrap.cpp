@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 17:17:59 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/30 10:21:46 by juhaamid         ###   ########.fr       */
+/*   Created: 2023/11/30 10:23:06 by juhaamid          #+#    #+#             */
+/*   Updated: 2023/11/30 10:31:53 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ScavTrap.hpp"
 
-#ifndef SCAV_TRAP_H
-# define SCAV_TRAP_H
-
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+ScavTrap::ScavTrap():ClapTrap("random", 100, 50, 20)
 {
-	public:
-			ScavTrap();
-			ScavTrap(std::string name);
-			ScavTrap(const ScavTrap &a);
-			ScavTrap &operator=(const ScavTrap &other);
-			~ScavTrap();
-				
-};
+	std::cout << "Default Constructor called" << std::endl;
+}
 
-#endif
-
-// private are only accessible from the base class ie claptrap
-// protected can be accessed from the base and whatever the derived class is
+ScavTrap::ScavTrap(std::string name) : name()

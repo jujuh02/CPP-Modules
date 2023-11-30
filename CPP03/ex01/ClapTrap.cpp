@@ -6,13 +6,17 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:15:14 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/29 16:28:20 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:34:11 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : hit(10), energy(10), _attack(0){
+ClapTrap::ClapTrap(): name("some guy"), hit(10), energy(10), _attack(0){
+	std::cout << "default constructer called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, unsigned int hit, ) : hit(10), energy(10), _attack(0){
 	this->name = name;
 	std::cout << this->name << " has joined the fight with " << std::endl;
 	std::cout << this->hit << " Hit Points | " <<	this->energy << " Energy Points | " << this->_attack << " Attack Damage" << std::endl;
