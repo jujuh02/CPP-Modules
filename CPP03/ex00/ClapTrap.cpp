@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:15:14 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/11/30 16:27:18 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/02 06:33:11 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ ClapTrap::ClapTrap(std::string name) : hit(10), energy(10), _attack(0){
 	std::cout << this->hit << " Hit Points | " <<	this->energy << " Energy Points | " << this->_attack << " Attack Damage" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &other) : name(other.name), hit(other.hit), energy(other.energy), _attack(other._attack)
+ClapTrap::ClapTrap(const ClapTrap &other)
 {
 	std::cout << "Copy Constructer Called" << std::endl;
+	*this = other;
 }	
 ClapTrap &ClapTrap::operator=(const ClapTrap &other){
 	if (this != &other){
@@ -33,7 +34,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other){
 }
 
 ClapTrap::~ClapTrap(){
-	// std::cout << this->name << " has died\n";
+	std::cout << "ClapTrap Destructor Called" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
