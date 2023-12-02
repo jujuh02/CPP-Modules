@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 10:23:06 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 06:26:05 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/02 11:08:25 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
 
 ScavTrap::ScavTrap(const ScavTrap &a): ClapTrap(a){
 	std::cout << "ScavTrap Copy Constructer Called" << std::endl;
-	// *this = a;
 }
 
 ScavTrap::~ScavTrap(){
@@ -38,6 +37,7 @@ ScavTrap::~ScavTrap(){
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other){
+	std::cout << "ScavTrap Copy Assignment Called" << std::endl;
 	if (this != &other){
 		this->name = other.name;
 		this->hit = other.hit;
@@ -49,11 +49,17 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other){
 }
 
 void ScavTrap::attack(const std::string &target) {
+	if (this->hit > 0 && this->energy > 0){
 	this->energy--;
 	std::cout << "ScavTrap: " << this->name
 			<< " attacks " << target
 			<< ", causing " << this->_attack
 			<< " points of damage!" << std::endl;
+	}
+	if (this->hit == 0)
+		std::cout << "ScavTrap: " << this->name << " cant attack because they dont have enough hit points"<< std::endl;
+	else 
+		std::cout << "ScavTrap: " << this->name << " cant attack because they dont have enough energy points" << std::endl;
 }
 
 void ScavTrap::guardGate(){
