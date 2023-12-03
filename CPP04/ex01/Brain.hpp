@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:09:24 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 23:27:32 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 11:34:59 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class Brain
 			Brain(const Brain &other);
 			Brain &operator=(const Brain &other);
 			~Brain();
-	
-
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:46:21 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 07:54:20 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:13:17 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 class WrongCat : public WrongAnimal
 {
 
-protected:
-			std::string type;
 public:
 		WrongCat();
 		WrongCat(const WrongCat&other);

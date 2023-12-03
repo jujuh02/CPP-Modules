@@ -6,11 +6,11 @@
 #    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 09:32:50 by juhaamid          #+#    #+#              #
-#    Updated: 2023/12/02 08:00:55 by juhaamid         ###   ########.fr        #
+#    Updated: 2023/12/03 12:15:12 by juhaamid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = aanimal
 
 SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 

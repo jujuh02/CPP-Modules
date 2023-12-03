@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:41:25 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 08:01:19 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 13:05:29 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ public:
 		WrongAnimal();
 		WrongAnimal(const std::string type);
 		WrongAnimal(const WrongAnimal&other);
+		WrongAnimal & operator=(const WrongAnimal &other);
 		virtual ~WrongAnimal(void);
 
-		WrongAnimal & operator=(const WrongAnimal &other);
 
 		std::string		getType(void) const;
 		void			makeSound(void) const;
