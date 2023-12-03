@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:58:57 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 09:31:32 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 07:41:21 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,59 +16,36 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-// int main() {
-//     const Animal* meta = new Animal();
-//     const Animal* j = new Dog();
-//     const Animal* i = new Cat();
+int main() {
+    Animal* objects[10];
 
-//     std::cout << j->getType() << " " << std::endl;
-//     std::cout << i->getType() << " " << std::endl;
+    // Create and fill the array of Animal objects with Dogs
+    for (int d = 0; d < 5; d++)
+        objects[d] = new Dog();
 
-//     i->makeSound(); // will output the cat sound!
-//     j->makeSound();
-//     meta->makeSound();
+    // Create and fill the array of Animal objects with Cats
+    std::cout << std::endl;
+    for (int d = 5; d < 10; d++)
+        objects[d] = new Cat();
 
-//     // Testing WrongCat
-//     const WrongAnimal* wrongMeta = new WrongAnimal();
-//     const WrongAnimal* wrongI = new WrongCat();
+    // Delete every Animal
+    std::cout << std::endl;
+    for (int d = 0; d < 10; d++)
+        delete objects[d];
 
-//     std::cout << wrongI->getType() << " " << std::endl;
-//     wrongI->makeSound(); // will output the wrong animal sound!
+    // Create and delete a Dog and a Cat using base class pointers
+    std::cout << std::endl;
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;
+    delete i;
 
-//     delete meta;
-//     delete j;
-//     delete i;
-//     delete wrongMeta;
-//     delete wrongI;
+    // Create and delete a Dog and a deep copy of the Dog
+    std::cout << std::endl;
+    Dog* test = new Dog();
+    Dog* deep = new Dog(*test);
+    delete test;
+    delete deep;
 
-//     return 0;
-// }
-
-int main()
-{
-	const Animal* animal = new Animal();
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
-
-	std::cout << std::endl;
-	std::cout << "Dog->getType [" << dog->getType() << "] " << std::endl;
-	std::cout << "Cat->getType [" << cat->getType() << "] " << std::endl;
-	cat->makeSound(); //will output the cat sound!
-	dog->makeSound(); //will output the dog sound! 
-	animal->makeSound(); //will output the animal sound
-
-	std::cout << std::endl;
-	const WrongAnimal* wronganimal = new WrongAnimal();
-	const WrongAnimal* wrongcat = new WrongCat();
-
-	std::cout << std::endl;
-	wrongcat->makeSound();
-	wronganimal->makeSound();
-
-	std::cout << std::endl;
-	delete animal;
-	delete dog;
-	delete cat;
-	delete wrongcat;
-	delete wronganimal;
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:09:24 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 13:23:17 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/02 23:27:32 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,13 @@
 
 class Brain
 {
-	protected:
-			std::string *ideas[100];
+	private:
+			std::string ideas[100];
+	public: 
+			Brain();
+			Brain(const Brain &other);
+			Brain &operator=(const Brain &other);
+			~Brain();
 	
 
 };

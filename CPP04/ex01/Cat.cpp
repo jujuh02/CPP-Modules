@@ -6,32 +6,37 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:30:39 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 07:35:37 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 08:08:20 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-
 Cat::Cat ():Animal("Cat")
 {
-	std::cout << "Cat default constructor" << std::endl;
+	this->brain = new Brain();
+	std::cout << "Cat default constructor with a new brain" << std::endl;
 
 }
 Cat::Cat (const Cat &other):Animal(other)
 {
-
+	this->brain = new Brain(*other.brain);
+	std::cout << "Cat copy constructor called with a seperate brain" << std::endl;
 }
 Cat::~Cat ()
 {
-	std::cout << "Cat destructor called" << std::endl;
+	delete this->brain;
+	std::cout << "Cat destructor called + its brain is deleted" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat &other)
 {
 	std::cout << "Cat copy assignment operator = " << std::endl;
-	if(this != &other)
+	if(this != &other){
 		type=other.getType();
+		this->brain = other.brain;
+		
+	}
 	return(*this);
 }
 void Cat::makeSound() const
