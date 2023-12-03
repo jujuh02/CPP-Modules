@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 06:31:49 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 07:29:34 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 08:51:16 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ public:
 		Animal &operator=(const Animal &other);
 		virtual ~Animal();
 		std::string getType() const;
-		virtual void makeSound() const;
-
+		virtual void makeSound() const = 0;
 };
 
 #endif
