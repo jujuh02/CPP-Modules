@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:34:17 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 07:34:52 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 13:07:18 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog ():Animal("Dog")
 }
 Dog::Dog (const Dog &other):Animal(other)
 {
-
+	std::cout << "Dog Copy Constructr Called" << std::endl;
 }
 Dog::~Dog ()
 {
@@ -35,5 +35,5 @@ Dog& Dog::operator=(const Dog &other)
 }
 void Dog::makeSound() const
 {
-	std::cout << "bark!!" << std::endl;
+	std::cout << "Dog Goes: Bark!!" << std::endl;
 }

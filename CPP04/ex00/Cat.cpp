@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:30:39 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 07:35:37 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 13:06:41 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cat::Cat ():Animal("Cat")
 }
 Cat::Cat (const Cat &other):Animal(other)
 {
-
+	std::cout << "Cat Copy Constructr Called" << std::endl;
 }
 Cat::~Cat ()
 {
@@ -36,5 +36,5 @@ Cat& Cat::operator=(const Cat &other)
 }
 void Cat::makeSound() const
 {
-	std::cout << "meow!!" << std::endl;
+	std::cout << "Cat Goes: MEOWW!!" << std::endl;
 }

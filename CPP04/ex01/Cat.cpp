@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:30:39 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/03 08:08:20 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:27:07 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat::Cat ():Animal("Cat")
 {
 	this->brain = new Brain();
-	std::cout << "Cat default constructor with a new brain" << std::endl;
+	std::cout << "Cat default constructor --- with brain" << std::endl;
 
 }
 Cat::Cat (const Cat &other):Animal(other)
@@ -41,5 +41,5 @@ Cat& Cat::operator=(const Cat &other)
 }
 void Cat::makeSound() const
 {
-	std::cout << "meow!!" << std::endl;
+	std::cout << "Cat Goes: MeOw MeOw!!" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:51:56 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 07:58:09 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:13:59 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ WrongCat::~WrongCat(void){
 	std::cout << "WrongCat destructor called" << std::endl;
 }
 
-WrongCat	& WrongCat::operator=(WrongCat const &other)
+WrongCat	&WrongCat::operator=(WrongCat const &other)
 {
 	std::cout << "WrongCat assignment operator called" << std::endl;
 	if (this != &other)

@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 08:39:17 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/03 09:08:03 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:30:08 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int main()
 	for (int i = 0; i < 5; i++)
 		dogs[i].makeSound();
 	delete[] dogs;
-	// Animal test;  Shouldnt work 
+	// Animal test;  //Shouldnt work 
 }

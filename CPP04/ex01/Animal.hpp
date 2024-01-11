@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 06:31:49 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 07:29:34 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 12:55:59 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Animal
 {
-protected: 
+protected:
 			std::string type;
 public:
 		Animal();

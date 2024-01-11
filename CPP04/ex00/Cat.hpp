@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:28:42 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/02 07:30:25 by juhaamid         ###   ########.fr       */
+/*   Updated: 2023/12/03 13:05:15 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Cat :public Animal
 	public:
     	Cat ();
     	Cat (const Cat &other);
-    	~Cat ();
 		Cat& operator=(const Cat &other);
+    	~Cat ();
 		void makeSound() const;
 
 };
