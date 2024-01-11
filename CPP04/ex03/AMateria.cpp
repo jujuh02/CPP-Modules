@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 11:02:39 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/09 09:03:57 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/11 09:32:21 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 AMateria::AMateria(std::string const &type)
 {
 	this->type = type;
+	std::cout << "AMateria Constructor Called" << std::endl;
+
 }
 
 AMateria::AMateria()
 {
-	std::cout << "Default AMateria Constructor Called";
+	std::cout << "Default AMateria Constructor Called" << std::endl;
 }
 AMateria::AMateria(const AMateria &other)
 {
-	std::cout << "AMateria Copy Constructor Called";
+	std::cout << "AMateria Copy Constructor Called" << std::endl;
 	*this = other;
 }
 
@@ -33,6 +35,11 @@ AMateria &AMateria::operator=(const AMateria &other)
 		type=other.getType();
 	}
 	return (*this);
+}
+
+AMateria::~AMateria()
+{
+	std::cout << "AMateria Destructor called" << std::endl;
 }
 
 std::string const &AMateria::getType()const

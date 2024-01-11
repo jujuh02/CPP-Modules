@@ -6,13 +6,15 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 12:23:57 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/03 12:25:08 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/11 08:25:30 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_H
 # define ICHARACTER_H
 #include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {
