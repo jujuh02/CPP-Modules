@@ -6,7 +6,7 @@
 #    By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 08:22:38 by juhaamid          #+#    #+#              #
-#    Updated: 2024/01/11 12:32:59 by juhaamid         ###   ########.fr        #
+#    Updated: 2024/01/16 14:11:20 by juhaamid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS = ${SRCS:.cpp=.o}
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 all = ${NAME}
 

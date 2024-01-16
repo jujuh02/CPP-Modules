@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:35:03 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/11 14:04:54 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/15 09:23:21 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class MateriaSource: public IMateriaSource
 {
 	private: 
-			AMateria *copym[4];
+			AMateria *copyM[4];
 			int count;
 	public:
 			MateriaSource();

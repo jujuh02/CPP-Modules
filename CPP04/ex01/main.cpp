@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:58:57 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/03 12:55:54 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:06:59 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,41 +17,56 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
-int main() {
-	Animal* objects[10];
-	// Create and fill the array of Animal objects with Dogs
-	for (int d = 0; d < 5; d++){
-		objects[d] = new Dog();
+int main()
+{
+	Dog *dog = new Dog();
+	Cat *cat = new Cat();
+
+	std::cout << "_____________________________________\n" << std::endl;
+
+	cat->getBrain()->_ideas[0] = "Idea numero 1";
+	cat->getBrain()->_ideas[1] = "Idea numero 2";
+
+	Cat *cat2 = new Cat();
+	std::cout << std::endl;
+
+	std::cout << "Cat2 = Cat" << std::endl;
+	*cat2 = *cat;
+
+	std::cout << "Cat ideas:" << std::endl;
+	for (int i = 0; i < 2; i++)
+        std::cout << "Idea: " << cat->getBrain()->_ideas[i] << std::endl;
+
+	std::cout << "Cat2 ideas" << std::endl;
+	for (int i = 0; i < 2; i++)
+        std::cout << "Idea: " << cat2->getBrain()->_ideas[i] << std::endl;
+
+	std::cout << "Cat ideas change" << std::endl;
+	cat->getBrain()->_ideas[1] = "lightbulb went off";
+	for (int i = 0; i < 2; i++)
+        std::cout << "Idea: " << cat->getBrain()->_ideas[i] << std::endl;
+
+	std::cout << "Cat2 ideas" << std::endl;
+	for (int i = 0; i < 2; i++)
+        std::cout << "Idea: " << cat2->getBrain()->_ideas[i] << std::endl;
+
+	delete dog;
+	delete cat;
+	delete cat2;
+
+	std::cout << "_____________________________________\n" << std::endl;
+
+	Animal *animals[10];
+
+	for (int i = 0; i < 10; i++) {
+		if (i < 10 / 2) {
+			animals[i] = new Cat();
+		} else {
+			animals[i] = new Dog();
+		}
 	}
 
-	// Create and fill the array of Animal objects with Cats
-	std::cout << std::endl;
-	for (int d = 5; d < 10; d++)
-	{
-		objects[d] = new Cat();
+	for (int i = 0; i < 10; i++) {
+		delete animals[i];
 	}
-
-	// Delete every Animal
-	std::cout << std::endl;
-	for (int d = 0; d < 10; d++)
-		delete objects[d];
-
-	// Create and delete a Dog and a Cat using base class pointers
-	std::cout << std::endl;
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;
-	delete i;
-
-    // Create and delete a Dog and a deep copy of the Dog
-	std::cout << "\n DEEP COPY TEST" << std::endl;
-    std::cout << std::endl;
-    Dog* test = new Dog();
-    Dog* deep = new Dog(*test);
-	std::cout<< "Mem of test " << &test << std::endl;
-	std::cout<< "Mem of deep " << &deep << std::endl;
-    delete test;
-    delete deep;
-
-    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:32:54 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/03 07:27:24 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:01:31 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@
 class Dog :public Animal
 {
 	private:
-		const Brain *brain;
+		Brain *brain;
 	public:
     	Dog ();
     	Dog (const Dog &other);
     	~Dog ();
 		Dog& operator=(const Dog &other);
 		void makeSound() const;
+		Brain* getBrain() const;
+		
 
 };
 #endif

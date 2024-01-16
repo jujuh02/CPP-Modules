@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 09:51:14 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/09 10:49:31 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/15 09:28:42 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,24 @@
 
 class Character : public ICharacter
 {
+
 private:
-		AMateria *m[4];
-		std::string name;
-		int count;
+    AMateria *things[4];
+    bool equipped[4];
+    std::string name;
 public:
-		Character();
-		Character(std::string name);
-		Character(Character &other);
-		Character &operator = (const Character &other);
-		~Character();
+    Character(void);
+    Character(const std::string &name);
+    Character(const Character &old);
+    Character &operator=(const Character &rhs);
+    ~Character(void);
 
-		std::string const &getName() const;
-		void	equip(AMateria *m);
-		void	unequip(int idx);
-		void	use(int idx, ICharacter &target);
-				
+    const std::string &getName() const;
+    void equip(AMateria *m);
+    void unequip(int idx);
+    void use(int idx, ICharacter &target);
+
+
 };
-
+				
 #endif

@@ -6,79 +6,98 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 09:51:04 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/10 12:33:08 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/15 09:28:29 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character()
+Character::Character(void):name("default")
 {
-	std::cout << "Character Constructer" << std::endl;
-	this->name = "No name lol";
-	this->count = 0;
+	for (size_t i = 0; i < 4; i++)
+	{
+		things[i] = NULL;
+		equipped[i] = false;
+	}
 }
 
-Character::Character(std::string name):name(name)
+Character::Character(const std::string &name)
+	: name(name)
 {
-	std::cout << "Character with name Constructor" << std::endl;
-	this->count = 0;
+	for (size_t i = 0; i < 4; i++)
+	{
+		things[i] = NULL;
+		equipped[i] = false;
+	}
 }
 
-Character::Character(Character &other)
+Character::Character(const Character &old)
+	:
+	  name(old.name)
 {
-	for (int i = 0; i < this->count; i++)
-		if (this->m[i])
-			delete(this->m[i]);
-	this->count= other.count;
-	for (int i = 0; i < this->count; i++)
-		this->equip(other.m[i]->clone());
-	std::cout << "Character copy created!" << std::endl;
+	for (size_t i = 0; i < 4; i++)
+	{
+		delete things[i];
+		things[i] = old.things[i];
+		equipped[i] = old.equipped[i];
+	}
 }
 
-Character &Character::operator=(const Character &other)
+Character &Character::operator=(const Character &rhs)
 {
-	for (int i = 0; i < this->count; i++)
-		if (this->m[i])
-			delete (this->m[i]);
-
-	this->count = other.count;
-	for (int i = 0; i < this->count; i++)
-		this->equip(other.m[i]->clone());
-	std::cout << "Character copy assignment-ed!" << std::endl;
+	if (&rhs == this)
+	{
+		return (*this);
+	}
+	name = rhs.name;
+	for (size_t i = 0; i < 4; i++)
+	{
+		delete things[i];
+		things[i] = rhs.things[i];
+		equipped[i] = rhs.equipped[i];
+	}
 	return (*this);
 }
 
-Character::~Character()
+Character::~Character(void)
 {
-	for(int i = 0; i < this->count; i++)
-		if (this->m[i])
-			delete (this->m[i]);
-	std::cout << "Character Destructed rip" << std::endl;
+	for (size_t i = 0; i < 4; i++)
+	{
+		delete things[i];
+	}
 }
 
-
-std::string const &Character::getName() const {
-	return (this->name);
-}
-
-void	Character::equip(AMateria *m)
+const std::string &Character::getName() const
 {
-	if (this->count == 4)
-		return ;
-	this->m[this->count++] = m;
+	return (name);
 }
 
-void	Character::unequip(int idx)
+void Character::equip(AMateria *m)
 {
-	if (idx < 0 || idx >= this->count)
-		return ;
-	this->m[idx] = NULL;
-	for (int i = idx; i < this->count - 1; i++)
-		this->m[i] = this->m[i + 1];
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (equipped[i] == false)
+		{
+			delete things[i];
+			things[i] = m;
+			equipped[i] = true;
+			return ;
+		}
+	}
 }
-void	Character::use(int idx, ICharacter &target)
+
+void Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
-		this->m[idx]->use(target);
+	{
+		equipped[idx] = false;
+	}
+}
+
+void Character::use(int idx, ICharacter &target)
+{
+	if (idx >= 0 && idx < 4 && equipped[idx] == true)
+	{
+		things[idx]->use(target);
+	}
 }

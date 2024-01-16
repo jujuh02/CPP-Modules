@@ -6,53 +6,76 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:34:46 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/11 13:41:18 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/15 09:23:38 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource()
+MateriaSource::MateriaSource(void) : count(0)
 {
-	std::cout << "MateriaSource Constructer" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+    {
+        copyM[i] = NULL;
+    }
 }
 
-MateriaSource::MateriaSource(const MateriaSource &other)
+MateriaSource::MateriaSource(const MateriaSource &old) : count(old.count)
 {
-	this->count= other.count;
-	for (int i = 0; i < this->count; i++)
-		this->copym[i] = other.copym[i]->clone();
-	std::cout << "MateriaSource copy created!" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+    {
+        delete copyM[i];
+        copyM[i] = old.copyM[i];
+    }
 }
 
-MateriaSource &MateriaSource::operator=(const MateriaSource &other)
-{	
-	if (this != &other){
-		this->count = other.count;
-		for (int i = 0; i < this->count; i++)
-			this->copym[i] = other.copym[i]->clone();
-	}
-	std::cout << "MateriaSource copy assignment!" << std::endl;
-	return (*this);
-}
-
-MateriaSource::~MateriaSource()
+MateriaSource &MateriaSource::operator=(const MateriaSource &rhs)
 {
-	for(int i = 0; i < this->count; i++)
-		if (this->copym[i])
-			delete (this->copym[i]);
-	std::cout << "MateriaSource Destructed rip" << std::endl;
+    if (&rhs == this)
+    {
+        return (*this);
+    }
+    count = rhs.count;
+    for (size_t i = 0; i < 4; i++)
+    {
+        delete copyM[i];
+        copyM[i] = rhs.copyM[i];
+    }
+    return (*this);
 }
 
-void MateriaSource::learnMateria(AMateria *m) {
-	if (count < 4) {
-            copym[count++] = m->clone();
-	}
+MateriaSource::~MateriaSource(void)
+{
+    for (size_t i = 0; i < 4; i++)
+    {
+        delete copyM[i];
+    }
 }
 
-AMateria *MateriaSource::createMateria(std::string const & type) {
-	for (int i = 0; i < this->count; i++)
-		if (this->copym[i]->getType() == type)
-			return (this->copym[i]->clone());
+void MateriaSource::learnMateria(AMateria *materia)
+{
+    if (count < 4)
+    {
+        delete copyM[count];
+        copyM[count] = materia;
+        count++;
+    }
+    else
+    {
+        count = 0;
+        delete copyM[count];
+        copyM[count] = materia;
+    }
+}
+
+AMateria *MateriaSource::createMateria(const std::string &type)
+{
+    for (size_t i = 0; i < 4; i++)
+    {
+        if (copyM[i]->getType() == type)
+        {
+            return (copyM[i]->clone());
+        }
+    }
 	return (0);
 }

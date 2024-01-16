@@ -6,26 +6,26 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:30:39 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/03 12:27:07 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/16 13:57:11 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat ():Animal("Cat")
+Cat::Cat ():Animal("cat")
 {
-	this->brain = new Brain();
+	brain = new Brain();
 	std::cout << "Cat default constructor --- with brain" << std::endl;
 
 }
 Cat::Cat (const Cat &other):Animal(other)
 {
-	this->brain = new Brain(*other.brain);
+	brain = new Brain(*other.brain);
 	std::cout << "Cat copy constructor called with a seperate brain" << std::endl;
 }
 Cat::~Cat ()
 {
-	delete this->brain;
+	delete brain;
 	std::cout << "Cat destructor called + its brain is deleted" << std::endl;
 }
 
@@ -34,7 +34,7 @@ Cat& Cat::operator=(const Cat &other)
 	std::cout << "Cat copy assignment operator = " << std::endl;
 	if(this != &other){
 		type=other.getType();
-		this->brain = other.brain;
+		*brain = *other.brain;
 		
 	}
 	return(*this);
@@ -42,4 +42,8 @@ Cat& Cat::operator=(const Cat &other)
 void Cat::makeSound() const
 {
 	std::cout << "Cat Goes: MeOw MeOw!!" << std::endl;
+}
+
+Brain* Cat::getBrain() const {
+	return brain;
 }
