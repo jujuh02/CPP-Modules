@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:28:42 by juhaamid          #+#    #+#             */
-/*   Updated: 2023/12/03 12:27:30 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/17 07:42:30 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@
 class Cat :public Animal
 {
 	private:
-			const Brain *brain;
+			Brain *brain;
 	public:
     	Cat ();
     	Cat (const Cat &other);
     	~Cat ();
 		Cat& operator=(const Cat &other);
 		void makeSound() const;
+		Brain* getBrain() const;
 
 };
 

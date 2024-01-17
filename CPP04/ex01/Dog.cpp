@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 07:34:17 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/16 14:01:41 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/17 07:41:46 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Dog& Dog::operator=(const Dog &other)
 }
 void Dog::makeSound() const
 {
-	std::cout << "Dog Goes: MeOw MeOw!!" << std::endl;
+	std::cout << "Dog Goes: WoofWoof!!" << std::endl;
 }
 
 Brain* Dog::getBrain() const {
