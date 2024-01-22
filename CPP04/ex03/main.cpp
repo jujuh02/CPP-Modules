@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 09:59:02 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/15 09:31:07 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/22 08:31:42 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+
 int main()
 {
     IMateriaSource *src = new MateriaSource();
@@ -46,7 +47,7 @@ int main()
 	mark->use(3, *mark);
 	mark->equip(new Ice());
 	mark->use(3, *mark);
-    ICharacter *bob = new Character("bob");
+    ICharacter *bob = new Character("pop");
     me->use(0, *bob);
     me->use(1, *bob);
     delete bob;

@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 09:51:04 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/15 09:28:29 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/22 08:35:30 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ Character::Character(void):name("default")
 	}
 }
 
-Character::Character(const std::string &name)
-	: name(name)
+Character::Character(const std::string &name): name(name)
 {
 	for (size_t i = 0; i < 4; i++)
 	{
@@ -31,9 +30,7 @@ Character::Character(const std::string &name)
 	}
 }
 
-Character::Character(const Character &old)
-	:
-	  name(old.name)
+Character::Character(const Character &old): name(old.name)
 {
 	for (size_t i = 0; i < 4; i++)
 	{
@@ -41,6 +38,7 @@ Character::Character(const Character &old)
 		things[i] = old.things[i];
 		equipped[i] = old.equipped[i];
 	}
+	std::cout << name << " Character Copy Constructor Called" << std::endl;
 }
 
 Character &Character::operator=(const Character &rhs)
@@ -81,6 +79,7 @@ void Character::equip(AMateria *m)
 			delete things[i];
 			things[i] = m;
 			equipped[i] = true;
+			std::cout << "Materia : " << things[i]->getType() << " equipped" << std::endl;
 			return ;
 		}
 	}
@@ -96,8 +95,14 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-	if (idx >= 0 && idx < 4 && equipped[idx] == true)
+	if (idx < 0 || idx >= 4 || equipped[idx] == false)
 	{
+		std::cout << "Nothing found to use at index " << idx << std::endl;
+		return ;
+	}
+	else if (idx >= 0 && idx < 4 && equipped[idx] == true)
+	{
+		std::cout << this->name;
 		things[idx]->use(target);
 	}
 }

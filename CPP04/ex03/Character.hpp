@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 09:51:14 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/15 09:28:42 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/22 08:35:42 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,5 @@ public:
     void equip(AMateria *m);
     void unequip(int idx);
     void use(int idx, ICharacter &target);
-
-
 };
-				
 #endif

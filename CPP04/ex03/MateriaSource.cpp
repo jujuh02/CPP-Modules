@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:34:46 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/01/15 09:23:38 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/01/22 08:23:03 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void MateriaSource::learnMateria(AMateria *materia)
     {
         delete copyM[count];
         copyM[count] = materia;
+		std::cout << "Materia : " << copyM[count]->getType() << " Learned " << std::endl;
         count++;
     }
     else
