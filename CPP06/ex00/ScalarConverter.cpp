@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:14:19 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/03 12:32:54 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:08:59 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ void ScalarConverter::convert(const std::string type)
 	int i;
 	float f;
 	double j;
-	
+	std::istringstream Char(type);
+	if (Char >> c)
+	{
+		
+	}
 }
