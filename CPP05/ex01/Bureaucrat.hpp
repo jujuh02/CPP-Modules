@@ -5,6 +5,10 @@
 #include <exception>
 #include <string>
 
+#include "Form.hpp"
+
+class Form;
+
 class Bureaucrat
 {
 
@@ -21,15 +25,16 @@ class Bureaucrat
             int getGrade(void)const;
             void    incrementGrade();
             void    decrementGrade();
+            void		signForm(Form &form);
     class  GradeTooHighException : public std::exception
     {
         public:
-               virtual const char *what() const throw();
+                virtual const char *what() const throw();
     };
     class  GradeTooLowException : public std::exception
     {
         public:
-                virtual const char *what() const throw();
+               virtual const char *what() const throw();
     };
 };
 
