@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 18:22:30 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/02 08:49:07 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:48:55 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@ Form::Form(): name("default"), sign(false), signgrade(150), execgrade(150)
 
 Form::Form(const std::string _name, const int sign_grade, const int exec_grade): name(_name), sign(false), signgrade(sign_grade), execgrade(exec_grade)
 {
+	try {
+		if (sign_grade < 1 || exec_grade < 1)
+			throw Form::GradeTooHighException();
+		if (sign_grade > 150 || exec_grade > 150)
+			throw Form::GradeTooLowException();
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
 Form::Form(const Form &f): name(f.name), signgrade(f.signgrade), execgrade(f.execgrade)
 {
@@ -46,13 +55,11 @@ const char *Form::GradeTooLowException::what() const throw()
 
 void Form::beSigned(Bureaucrat &signer)
 {
-	if (sign)
-	{
-		std::cout << "Signatures can only be done once" << std::endl;
-		return ;
-	}
 	if (signer.getGrade() <= signgrade)
+	{
+		
 		sign = true;
+	}
 	else
 		throw GradeTooLowException();
 		

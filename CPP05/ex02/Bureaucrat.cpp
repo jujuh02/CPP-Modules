@@ -3,17 +3,17 @@
 Bureaucrat::Bureaucrat() : name("default"), grade(150)
 {
     if (grade > 150)
-        throw   GradeTooHighException();
-    else if (grade < 0)
         throw   GradeTooLowException();
+    else if (grade < 0)
+        throw   GradeTooHighException();
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) :name(name), grade(grade)
 {
     if (grade > 150)
-        throw   GradeTooHighException();
-    else if (grade < 0)
         throw   GradeTooLowException();
+    else if (grade < 0)
+        throw   GradeTooHighException();
 }
 Bureaucrat::Bureaucrat(const Bureaucrat &b): name(b.name), grade(b.grade)
 {
@@ -43,23 +43,28 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 void Bureaucrat::incrementGrade()
 {
+   if (grade <= 1)
+       throw GradeTooHighException();
+   grade--;
+}
+
+void Bureaucrat::decrementGrade()
+{
     if (grade >= 150)
        throw GradeTooLowException();
     grade++;
 }
 
-void Bureaucrat::decrementGrade()
-{
-    if (grade <= 1)
-       throw GradeTooHighException();
-   grade--;
-}
-
 void    Bureaucrat::signForm(AForm &form)
 {
     	try {
-		form.beSigned(*this);
-		std::cout << this->name << " signed " << form.getName() << std::endl;
+			if (form.getSigned() == 0)
+			{
+				form.beSigned(*this);
+				std::cout << this->name << " signed " << form.getName() << std::endl;
+			}
+			else
+				std::cout << "Signatures can only be done once" << std::endl;
 	}
 	catch (std::exception &e) {
 		std::cout << this->name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;

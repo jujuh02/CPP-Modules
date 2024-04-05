@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 18:22:20 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/02 08:43:38 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/05 14:04:01 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form
 {
 	private:
 			const std::string name;
-			_Bool	sign;
+			bool	sign;
 			const	int	signgrade;
 			const	int execgrade;
 	public:

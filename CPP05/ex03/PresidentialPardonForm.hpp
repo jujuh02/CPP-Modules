@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 08:58:34 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/05 14:30:21 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/05 14:33:19 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <fstream>
 class PresidentialPardonForm : public AForm
 {
-
 	public:
 			PresidentialPardonForm();
 			PresidentialPardonForm(const std::string target);

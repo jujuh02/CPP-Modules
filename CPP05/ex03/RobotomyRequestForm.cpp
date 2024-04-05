@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 08:13:32 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/05 15:22:53 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/05 14:56:43 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	RobotomyRequestForm::doAction()const{
 	srand(time(NULL));
 	num = rand() % 2;
 	if(num == 1)
-		std::cout << "beep boop" << getName() << " robotomized successfully!" << std::endl;
+		std::cout << "beep boop " << getName() << " robotomized successfully!" << std::endl;
 	else
 		throw RobotomyRequestForm::drillException();
 	

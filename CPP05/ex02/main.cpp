@@ -3,29 +3,30 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
-	
-	std::cout << "\033[33m" << std::endl << "Test ex02" << "\033[0m" << std::endl;
+	std::cout << "Working tests:" << std::endl;
+	ShrubberyCreationForm Sform("tree form");
+	RobotomyRequestForm Rform("robot form");
+	PresidentialPardonForm Pform("president form");
+	Bureaucrat d("Bob", 1);
+	Bureaucrat e("Alice", 150);
 
-	std::cout << "\033[33m" << std::endl << "Test ex02 ShrubberyCreationForm" << "\033[0m" << std::endl;
-	Bureaucrat Mr_Shrubby("Mr_Shrubby", 130);
-	ShrubberyCreationForm Shrubby_form("Hello");
-	std::cout << std::endl;
-	std::cout << Shrubby_form;
-	Mr_Shrubby.signForm(Shrubby_form);
-	std::cout << Shrubby_form;
-	Mr_Shrubby.executeForm(Shrubby_form);
+	std::cout << std::endl << "Signing forms: " << std::endl;
+	d.signForm(Sform);
+	e.signForm(Rform);
+	d.signForm(Rform);
+	e.signForm(Rform);
+	e.signForm(Rform);
 
-
-	std::cout << "\033[33m" << std::endl << "Test ex02 RobotomyRequestForm" << "\033[0m" << std::endl;
-	Bureaucrat Bob("Bob", 19);
-	RobotomyRequestForm Me("Hi");
-	Bob.signForm(Me);
-	for( int i = 0; i < 5; i++)
-	{
-		Bob.executeForm(Me);
-	}
+	std::cout << std::endl << "Executing forms: " << std::endl;
+	d.executeForm(Sform);
+	e.executeForm(Rform);
+	d.executeForm(Rform);
+	e.executeForm(Pform);
+	d.signForm(Pform);
+	d.executeForm(Pform);
 	return (0);
 }

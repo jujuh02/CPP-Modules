@@ -43,19 +43,47 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 void Bureaucrat::incrementGrade()
 {
-    if (grade <= 1)
+   
+	  if (grade <= 1)
        throw GradeTooHighException();
    grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
-
     if (grade >= 150)
        throw GradeTooLowException();
     grade++;
 }
 
+void    Bureaucrat::signForm(AForm &form)
+{
+    	try {
+			if(form.getSigned() == 0)
+			{
+				form.beSigned(*this);
+				std::cout << this->name << " signed " << form.getName() << std::endl;
+			}
+			else
+				std::cout << "Signatures can only be done once" << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << this->name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+void    Bureaucrat::executeForm(AForm const &form)
+{
+    
+    try
+	{
+		form.execute(*this);
+		std::cout << name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
 const std::string Bureaucrat::getName(void) const
 {
     return (name);

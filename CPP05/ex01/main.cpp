@@ -4,77 +4,32 @@
 
 int main(void)
 {
-	// std::cout << "\033[33m" << std::endl << "Test ex01" << "\033[0m" << std::endl;
-
-	// std::cout << "\033[33m" << std::endl << "Test too high and too low creation" << "\033[0m" << std::endl;
-	// try
-	// {
-	// 	Bureaucrat Sleeper1("Bernd", 1500);
-	// }
-	// catch(const std::exception &e)
-	// {
-	// 	std::cerr << "Exception caught: " << e.what() << std::endl;
-	// }
-
-	// try
-	// {
-	// 	Bureaucrat Sleeper2("Olaf", -10);
-	// }
-	// catch(const std::exception &e)
-	// {
-	// 	std::cerr << "Exception caught: " << e.what() << std::endl;
-	// }
-
-	// std::cout << "\033[33m" << std::endl << "Test increasing" << "\033[0m" << std::endl;
-	// Bureaucrat bob("Bob", 2);
-	// std::cout << bob;
-	// try
-	// {
-	// 	bob.incrementGrade();
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << "Exception caught: " << e.what() << std::endl;
-	// }
-	// std::cout << bob;
-	
-	// try
-	// {
-	// bob.incrementGrade();
-	// }
-	// catch(const std::exception& e)
-	// {
-	// std::cerr << "Exception caught: " << e.what() << std::endl;
-	// }
-	// std::cout << bob;
-
-
-
-	// std::cout << "\033[33m" << std::endl << "Test decreasing" << "\033[0m" << std::endl;
-	// Bureaucrat tim("Tim", 149);
-	// std::cout << tim;
-	// try
-	// {
-	// 	tim.decrementGrade();
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << "Exception caught: " << e.what() << std::endl;
-	// }
-	// std::cout << tim;
-	
-	// try
-	// {
-	// tim.decrementGrade();
-	// }
-	// catch(const std::exception& e)
-	// {
-	// std::cerr << "Exception caught: " << e.what() << std::endl;
-	// }
-	// std::cout << tim;
-
-
 	std::cout << "\033[33m" << std::endl << "Test ex01" << "\033[0m" << std::endl;
+		std::cout << "Working tests (and overloaded operator):" << std::endl;
+	Form a("Form A", 10, 8);
+	Form b("Form B", 120, 80);
+	std::cout << a << std::endl << b << std::endl;
+
+	std::cout << std::endl << "Invalid grades:" << std::endl;
+	Form c("Form C", 0, 8);
+	Form d("Form C", 151, 8);
+	Form e("Form C", 1, -8);
+	Form f("Form C", 1, 800);
+
+	std::cout << std::endl << "Signing forms:" << std::endl;
+	Bureaucrat ba("John", 1);
+	Bureaucrat bb("Bob", 10);
+	a.beSigned(ba);
+	b.beSigned(bb);
+
+	std::cout << std::endl << "Invalid signs:" << std::endl;
+	Bureaucrat bc("Charles", 150);
+	bc.signForm(c);
+
+	std::cout << std::endl << "Repeated signs:" << std::endl;
+	ba.signForm(a);
+	bb.signForm(a);
+
 
 	Form id_form("ID FORM", 100, 90);
 	Bureaucrat mr_slow;

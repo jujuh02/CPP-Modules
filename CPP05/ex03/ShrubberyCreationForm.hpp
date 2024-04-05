@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:35:05 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/04 20:18:46 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/05 14:32:24 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 
 class ShrubberyCreationForm : public AForm
 {
-	private:
-			std::string target;
 	public:
 			ShrubberyCreationForm();
 			ShrubberyCreationForm(const std::string target);
