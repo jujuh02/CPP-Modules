@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:35:08 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/02 19:06:17 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/05 08:38:34 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,48 @@ ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Default", 145, 137)
 }
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target): AForm(target, 145, 137)
 {
-	std::cout << "Shrubbery Form " << target << "created" << std::endl;
+	std::cout << "Shrubbery Form " << target << " created" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &s): AForm(s)
 {
-
+	*this = s;
 }
 
-ShrubberyCreationForm::&
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const	ShrubberyCreationForm &s)
+{
+	target = s.target;
+	setSign(s.getSigned());
+	return (*this);
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 		
+}
+
+void	ShrubberyCreationForm::doAction()const{
+	std::ofstream out;
+	out.open(((target + ("_shrubbery")).c_str()));
+	if (out)
+	{
+		out << "			*			\n"; 
+		out << "		   /.\\			\n";
+		out << "		  /O..\\		\n";
+		out << "		  /..O\\		\n";
+		out << "		 /.o..O\\		\n";
+		out << "		 /...O.\\		\n";
+		out << "		/..O....\\		\n";
+		out << "		^^^[_]^^^		\n";
+	
+		out.close();
+	}
+	else
+		throw ShrubberyCreationForm::fileException();
+	
+}
+
+const char *ShrubberyCreationForm::fileException::what() const throw()
+{
+	return ("File couldnt open and nothing could be written");
 }

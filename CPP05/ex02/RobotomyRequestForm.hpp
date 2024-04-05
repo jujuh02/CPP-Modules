@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/02 10:35:05 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/04 20:18:46 by juhaamid         ###   ########.fr       */
+/*   Created: 2024/04/05 08:13:54 by juhaamid          #+#    #+#             */
+/*   Updated: 2024/04/05 08:21:33 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_H
-# define SHRUBBERYCREATIONFORM_H
+#ifndef ROBOTOMYREQUESTFORM_H
+# define ROBOTOMYREQUESTFORM_H
 
-#include <iostream>
 #include <string>
-#include <fstream>
-
+#include <iostream>
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include <cstdlib>
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 	private:
 			std::string target;
 	public:
-			ShrubberyCreationForm();
-			ShrubberyCreationForm(const std::string target);
-			ShrubberyCreationForm(const ShrubberyCreationForm &s);
-			ShrubberyCreationForm &operator=(const ShrubberyCreationForm &s);
-			~ShrubberyCreationForm();
+			RobotomyRequestForm();
+			RobotomyRequestForm(const std::string target);
+			RobotomyRequestForm(const RobotomyRequestForm &s);
+			RobotomyRequestForm &operator=(const RobotomyRequestForm &s);
+			~RobotomyRequestForm();
 			void	doAction()const;
-	class fileException : public std::exception
+	class drillException : public std::exception
 	{
 		public:
 				virtual const char *what() const throw();
 	};
 };
-
 
 
 #endif
