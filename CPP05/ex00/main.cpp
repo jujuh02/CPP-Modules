@@ -2,12 +2,13 @@
 
 int main()
 {
-	try 
+	try
 	{
 		std::cout << "overload test" << std::endl;
-	Bureaucrat hi("hi", 1);
-	Bureaucrat bye("bye", 150);
-	std::cout << hi << std::endl << bye << std::endl;
+	Bureaucrat hi("hi", 2);
+	std::cout << hi << std::endl;
+	Bureaucrat bye("bye", 1595);
+	std::cout << bye << std::endl;
 	}
 	catch (const std::exception &e)
 	{

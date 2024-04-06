@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	std::cout << "\033[33m" << std::endl << "Test ex01" << "\033[0m" << std::endl;
+	std::cout << "\033[33m" << "Test ex01" << "\033[0m" << std::endl;
 		std::cout << "Working tests (and overloaded operator):" << std::endl;
 	Form a("Form A", 10, 8);
 	Form b("Form B", 120, 80);
@@ -24,23 +24,12 @@ int main(void)
 
 	std::cout << std::endl << "Invalid signs:" << std::endl;
 	Bureaucrat bc("Charles", 150);
-	bc.signForm(c);
+	Form C("Form C", 15, 20);
+	bc.signForm(C);
 
 	std::cout << std::endl << "Repeated signs:" << std::endl;
 	ba.signForm(a);
 	bb.signForm(a);
 
-
-	Form id_form("ID FORM", 100, 90);
-	Bureaucrat mr_slow;
-	Bureaucrat mr_id("MR_ID", 100);
-	std::cout << id_form;
-	
-	mr_slow.signForm(id_form);
-	std::cout << id_form;
-
-	mr_id.signForm(id_form);
-	std::cout << id_form;
-	
 	return (0);
 }

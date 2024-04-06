@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 18:22:30 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/05 15:48:55 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:15:32 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Form::Form(): name("default"), sign(false), signgrade(150), execgrade(150)
 {
+	
 }
 
 Form::Form(const std::string _name, const int sign_grade, const int exec_grade): name(_name), sign(false), signgrade(sign_grade), execgrade(exec_grade)

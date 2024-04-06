@@ -67,7 +67,7 @@ void    Bureaucrat::signForm(Form &form)
 				std::cout << "Signatures can only be done once" << std::endl;
 	}
 	catch (std::exception &e) {
-		std::cout << this->name << " couldn't sign " << name << " because " << e.what() << std::endl;
+		std::cout << this->name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 const std::string Bureaucrat::getName(void) const

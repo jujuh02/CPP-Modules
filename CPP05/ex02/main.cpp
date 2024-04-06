@@ -18,8 +18,8 @@ int main(void)
 	d.signForm(Sform);
 	e.signForm(Rform);
 	d.signForm(Rform);
-	e.signForm(Rform);
-	e.signForm(Rform);
+	d.signForm(Rform);
+	d.signForm(Rform);
 
 	std::cout << std::endl << "Executing forms: " << std::endl;
 	d.executeForm(Sform);
@@ -30,3 +30,10 @@ int main(void)
 	d.executeForm(Pform);
 	return (0);
 }
+
+// Shrubbery sign grade : 145 exec grade : 137
+// Robotomy sign grade : 72 exec grade : 45
+// Presidential sign grade : 25 exec grade : 5
+
+
+
