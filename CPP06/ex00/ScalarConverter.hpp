@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:14:45 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/08 08:28:09 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:38:45 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@
 #include <limits>
 #include <cstdlib>
 #include <iomanip>
-#define RED "\033[0;31m"
-#define YELLOW "\033[0;33m"
-#define BLUE "\033[0;34m"
-#define GREEN "\033[0;32m"
-#define RESET "\033[0m"
 
 class ScalarConverter
 {

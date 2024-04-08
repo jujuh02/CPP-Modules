@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 18:08:18 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/08 09:00:26 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/08 14:01:05 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ int main(void)
 	std::cout << "-----------------------------------------------------------------------------" << std::endl;
 	std::cout << "&data            : " << &data << std::endl;
 	std::cout << "deserializeValue : " << deserializedValue << std::endl;
-	std::cout << "-----------------------------------------------------------------------------" << std::endl;
-	std::cout << deserializedValue->data_title << " + " << deserializedValue->number << " = " << "nono" <<  std::endl;
-	std::cout << "-----------------------------------------------------------------------------" << std::endl;
+	std::cout << "DATA TITLE " <<deserializedValue->data_title << std::endl;
+	std::cout << "DATA NUM " <<deserializedValue->number << std::endl;
+
+	
 	return (0);
 }
