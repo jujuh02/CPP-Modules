@@ -1,6 +1,6 @@
-NAME = convert
+NAME = Base
 
-SRCS = main.cpp ScalarConverter.cpp
+SRCS = main.cpp Base.cpp Identify.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

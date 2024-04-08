@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:14:19 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/07 12:33:00 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/08 08:28:27 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 ScalarConverter::ScalarConverter()
 {
-	
+	 
 }
 
-ScalarConverter::ScalarConverter(const ScalarConverter &other)
+ScalarConverter::ScalarConverter(ScalarConverter const & copy)
 {
-	(void) other;
+	*this = copy;
 }
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
+
+ScalarConverter & ScalarConverter::operator=(ScalarConverter const & rhs)
 {
-	(void) other;
+	if (this == &rhs)
+	{}
+	return (*this);
 }
 
 ScalarConverter::~ScalarConverter()
@@ -31,41 +34,96 @@ ScalarConverter::~ScalarConverter()
 	
 }
 
-void ScalarConverter::convert(const std::string type)
+void ScalarConverter::convert(std::string type)
 {
-	std::cout << type << std::endl;
+	toChar(type);
+	toInt(type);
+	toDouble(type);
+	toFloat(type);	
 }
 
-bool ScalarConverter::isSpecialCase(const std::string &input)
+void ScalarConverter::toChar(std::string str)
 {
-	
+	char ch;
+
+	ch = 0;
+	try
+	{
+		if (str.length() == 1 && !isdigit(str[0]))
+			ch = str[0];
+		else
+		{
+			int base = 10;
+			char *endptr = NULL;
+			const long long num = std::strtoll(str.c_str(), &endptr, base);
+			if (endptr == str.c_str())
+				throw std::invalid_argument("no conversion possible");
+			if (num < std::numeric_limits<int>::min() || num > std::numeric_limits<int>::max())
+				throw std::out_of_range("Out of range");
+			ch = static_cast<char>(num);
+		}
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "char: impossible" << std::endl;
+		return ;
+	}
+	if (isprint(ch))
+		std::cout << "char: '" << ch << "'" << std::endl;
+	else
+		std::cout << "char: Non displayable" << std::endl;
 }
 
-void ScalarConverter::handleSpecialCase(const std::string &input)
+void ScalarConverter::toInt(std::string str)
 {
-	
+	int num = 0;
+
+	try
+	{
+		if (str.length() == 1 && !isdigit(str[0]))
+			num = static_cast<int>(str[0]);
+		else
+		{
+			int base = 10;
+			char *endptr = NULL;
+			const long long num2 = std::strtoll(str.c_str(), &endptr, base);
+			if (endptr == str.c_str())
+				throw std::invalid_argument("no conversion possible");
+			if (num2 < std::numeric_limits<int>::min() || num2 > std::numeric_limits<int>::max())
+				throw std::out_of_range("Out of range");
+			num = static_cast<int>(num2);
+		}
+		std::cout << "int: " << num << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "int: impossible" << std::endl;
+		return ;
+	}
 }
 
-char ScalarConverter::convertChar(const std::string &input)
+void ScalarConverter::toDouble(std::string str)
 {
-	if (input.length() != 1)
-		throw std::exception();
-	return (input[0]);
-	
+	double num = 0;
+	if (str.length() == 1 && !isdigit(str[0]))
+		num = static_cast<double>(str[0]);
+	else
+		num = std::atof(str.c_str());
+	if (num - static_cast<int>(num) == 0)
+		std::cout << "double: " << num << ".0" << std::endl;
+	else
+		std::cout << "double: " << num << std::endl;
 }
 
-int ScalarConverter::convertInt(const std::string &input)
+void ScalarConverter::toFloat(std::string str)
 {
-	
-	
-}
-
-float ScalarConverter::convertFloat(const std::string &input)
-{
-	
-}
-
-double ScalarConverter::convertDouble(const std::string &input)
-{
-	
+	float num = 0;
+	if (str.length() == 1 && !isdigit(str[0]))
+		num = static_cast<float>(str[0]);
+	else
+		num = std::atof(str.c_str());
+	if (num - static_cast<int>(num) == 0)
+		std::cout << "float: " << num << ".0f" << std::endl;
+	else
+		std::cout << "float: " << num << "f" << std::endl;
 }
