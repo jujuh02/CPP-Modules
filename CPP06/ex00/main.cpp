@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 08:22:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/08 08:27:23 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:20:39 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,6 @@ int main(int ac, char **av)
 		return (1);
 	}
 	else
-		std::cout << "Wrong number of arguments -- usage: ./convert <arg>" << std::endl;
+		std::cout << "Wrong number of arguments " << std::endl;
 	return (1);
 }

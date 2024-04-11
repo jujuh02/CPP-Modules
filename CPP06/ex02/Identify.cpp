@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 08:37:57 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/08 08:48:48 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/08 14:13:54 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,29 @@ void identify (Base *p) {
 		std::cout << "Type is A" << std::endl;
 	else if (dynamic_cast<B *>(p) != NULL)
 		std::cout << "Type is B" << std::endl;
-	else
+	else	
 		std::cout << "Type is C" << std::endl;
 }
-void identify (Base &p) {
-	try {
-		dynamic_cast<A &>(p);
-	} catch (std::exception &e) {
-		try {
-			dynamic_cast<B &>(p);
-		} catch (std::exception &e) {
-			std::cout << "Type is C" << std::endl;
-			return ;
-		}
-		std::cout << "Type is B" << std::endl;
-		return ;
-	}
-	std::cout << "Type is A" << std::endl;
+
+void identify(Base &p) {
+	Base tmp;
+	
+  try {
+    tmp = dynamic_cast<A &>(p);
+		(void) tmp;
+    std::cout << "Type Class is A" << std::endl;
+  } catch (std::exception &e) {
+  }
+  try {
+    tmp = dynamic_cast<B &>(p);
+		(void) tmp;
+    std::cout << "Type Class  is B" << std::endl;
+  } catch (std::exception &e) {
+  }
+  try {
+    tmp = dynamic_cast<C &>(p);
+		(void) tmp;
+    std::cout << "Type Class is C" << std::endl;
+  } catch (std::exception &e) {
+  }
 }
