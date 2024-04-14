@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:06:13 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/14 14:05:20 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/14 14:11:29 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,20 @@ int main()
 	    std::cerr << e.what() << std::endl;
     }
 
-    Span sp2(50000);
-	sp2.addNumber(1);
-	sp2.addNumber(2405);
-	sp2.addNumber(30);
-	std::vector<int> v(40000);
-	sp2.addRange(v.begin(), v.end());
-	std::cout << sp2.shortestSpan() << std::endl;
-	std::cout << sp2.longestSpan() << std::endl;
-    std::cout << "size " << v.size() << std::endl;
-    return 0;
+    Span spp(10);
 
+
+    spp.addNumber(1);
+    spp.addNumber(10);
+    spp.addNumber(40);
+    std :: cout << "_________________" << std :: endl;
+
+    std::cout << "spp nums" << std::endl;
+    for(size_t i = 0 ; i < spp.vect.size(); i++)
+    {
+        std :: cout << spp.vect[i] << std :: endl;
+    }
+    std :: cout << "_________________" << std :: endl;
+    std :: cout <<spp.shortestSpan() << std :: endl;
+    std :: cout <<spp.longestSpan() << std :: endl;
 }

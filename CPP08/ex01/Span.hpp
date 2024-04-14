@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 10:19:16 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/14 13:52:14 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/14 14:09:03 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class Span
 {
 	private:
 			unsigned int n;
-		std::vector<int> vect;
 			Span();
 	public:
+			std::vector<int> vect;
 			Span(unsigned int N);
 			Span(const Span &s);
 			Span &operator=(const Span &s);
