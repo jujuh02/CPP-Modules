@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:07:02 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/14 17:39:39 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/14 18:10:51 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,10 +189,10 @@ int PmergeMe::stringToInt(const char* str) {
 }
 
 
-double PmergeMe::sorter(char **av)
+double PmergeMe::sortt(char **av)
 {
     std::clock_t s, e;
-    double v_time, l_time;
+    double vecTime, listTime;
 	int num;
     for (int i = 1; av[i]; i++)
     {
@@ -223,11 +223,11 @@ double PmergeMe::sorter(char **av)
     s = std::clock();
     sort_vec(vec, 0, vec.size() - 1, vec.size() / 4);
     e = std::clock();
-    v_time = (double)(e - s) / CLOCKS_PER_SEC * 1000;
+    vecTime = (double)(e - s) / CLOCKS_PER_SEC * 1000;
     s = std::clock();
     sort_lst(lst);
     e = std::clock();
-    l_time = (double)(e - s) / CLOCKS_PER_SEC * 1000;
+    listTime = (double)(e - s) / CLOCKS_PER_SEC * 1000;
     std::cout << "After:  ";
     if (vec.size() <= (size_t)5)
     {
@@ -241,7 +241,7 @@ double PmergeMe::sorter(char **av)
             std::cout << vec[i] << " ";
         std::cout << "[...]" << std::endl;
     }
-    std::cout << "Time to process a range of " << vec.size()<< " elements with std::vector: " << std::setprecision(5) << v_time << " us" << std::endl;
-    std::cout << "Time to process a range of " << vec.size() <<" elements with std::list: " << std::setprecision(5) << l_time << " us" << std::endl;
+    std::cout << "Time to process a range of " << vec.size()<< " elements with std::vector: " << std::setprecision(5) << vecTime << " us" << std::endl;
+    std::cout << "Time to process a range of " << vec.size() <<" elements with std::list: " << std::setprecision(5) << listTime << " us" << std::endl;
     return 0;
 }

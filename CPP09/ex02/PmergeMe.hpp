@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:06:59 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/14 17:40:08 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/14 18:01:42 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class PmergeMe {
         PmergeMe &operator=(const PmergeMe &other);
         ~PmergeMe();
         void print();
-        double sorter(char **av);
+        double sortt(char **av);
         int check_is_num(char *str);
         
         void sort_vec(std::vector<int> &vec, int left, int right, int k);

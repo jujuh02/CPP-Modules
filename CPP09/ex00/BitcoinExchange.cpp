@@ -6,13 +6,11 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 18:14:19 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/13 20:39:48 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/14 18:16:03 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-
-/* Constructs */
 
 BitcoinExchange::BitcoinExchange( void ) { }
 
@@ -28,10 +26,8 @@ BitcoinExchange &BitcoinExchange::operator=( BitcoinExchange const &copy ) {
 
 BitcoinExchange::~BitcoinExchange( void ) { }
 
-/* Members / Modifiers */
-
 void BitcoinExchange::push( std::string const date, std::string const price ) {
-	this->_data.insert(std::pair< std::string, float >(date, atof(price.c_str()))); // this will only insert if the key doesn't exist
+	this->_data.insert(std::pair< std::string, float >(date, atof(price.c_str()))); 
 }
 
 void BitcoinExchange::pop( std::string const date ) {
@@ -41,7 +37,6 @@ void BitcoinExchange::pop( std::string const date ) {
 	this->_data.erase(date);
 }
 
-// Look up the price of a bitcoin on a given date. If no data exists for that date, check the closest previous available date.
 float BitcoinExchange::calculatePrice( std::string date, float amount ) {
 	std::map< std::string, float >::iterator pair = this->_data.lower_bound(date);
 
@@ -51,8 +46,6 @@ float BitcoinExchange::calculatePrice( std::string date, float amount ) {
 	}
 	return (amount * pair->second);
 }
-
-/* Validators */
 
 bool validDate( std::string const date ) {
 	if (date.length() != 10) {
