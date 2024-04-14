@@ -1,4 +1,4 @@
-NAME = find
+NAME = mutant
 
 SRCS = main.cpp 
 

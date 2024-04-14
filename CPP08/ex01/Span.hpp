@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 10:19:16 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/11 10:44:21 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/12 07:57:14 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <vector>
 #include <iostream>
 #include <stdexcept>
+#include <limits>
 
 class Span
 {
