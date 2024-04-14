@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 21:04:39 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/14 11:13:38 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:05:53 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void RPN::operation( std::string const &sign ) {
 		sstack.push(num1 / num2);
 	}
 	else
-		throw std::runtime_error("Unknown operator");
+		throw std::runtime_error("Operator Does Not Exist");
 }
 
 void RPN::calculate( std::string const &input ) {

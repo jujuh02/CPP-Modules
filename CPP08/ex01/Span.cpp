@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 10:56:52 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/14 13:34:34 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/14 14:42:25 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int Span::shortestSpan() const
 	std::vector<int> temp = vect;
 	sort(temp.begin(), temp.end());
 	int min_diff = std::numeric_limits<int>::max();
-
 	for (size_t i = 0; i < temp.size() - 1; i++) {
 		if (temp[i + 1] - temp[i] < min_diff) {
 			min_diff = temp[i + 1] - temp[i];
@@ -77,4 +76,4 @@ void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator
 	if (temp.size() >= (n - vect.size()))
 		throw std::out_of_range("range is too big, there is not enough space");
 	copy(temp.begin(), temp.end(), std::back_inserter(vect));
-}
+} 
