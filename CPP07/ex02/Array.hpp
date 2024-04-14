@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:29:36 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/10 21:03:35 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/12 14:43:33 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ T& Array<T>::operator[](unsigned int index){
 
 template<typename T>
 unsigned int Array<T>::size(void) const{
-	return sizee;
+	return (sizee);
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:06:13 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/14 11:39:02 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/14 14:05:20 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 
 
     sp.addNumber(6);
-    sp.addNumber(3);
+    sp.addNumber(5);
     sp.addNumber(17);
     sp.addNumber(9);
     sp.addNumber(12);
@@ -36,16 +36,14 @@ int main()
     }
 
     Span sp2(50000);
-	sp2.addNumber(3);
+	sp2.addNumber(1);
+	sp2.addNumber(2405);
+	sp2.addNumber(30);
 	std::vector<int> v(40000);
 	sp2.addRange(v.begin(), v.end());
 	std::cout << sp2.shortestSpan() << std::endl;
 	std::cout << sp2.longestSpan() << std::endl;
     std::cout << "size " << v.size() << std::endl;
-    Span spp(1);
-	std::cout << spp.longestSpan() << std::endl;
-    
-
     return 0;
 
 }

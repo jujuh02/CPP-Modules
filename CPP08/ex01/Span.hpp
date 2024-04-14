@@ -6,7 +6,7 @@
 /*   By: juhaamid <juhaamid@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 10:19:16 by juhaamid          #+#    #+#             */
-/*   Updated: 2024/04/12 07:57:14 by juhaamid         ###   ########.fr       */
+/*   Updated: 2024/04/14 13:52:14 by juhaamid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Span
 {
 	private:
 			unsigned int n;
-		unsigned int stored;
 		std::vector<int> vect;
 			Span();
 	public:
